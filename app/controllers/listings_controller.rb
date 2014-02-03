@@ -2,7 +2,8 @@ class ListingsController < ApplicationController
   include ListingsHelper
 
   def index
-    @listings = Listing.all
+    @listings = Listing.search(params[:search])
+
   end 
 
   def show
@@ -17,5 +18,9 @@ class ListingsController < ApplicationController
     @listing = Listing.new (listing_params)
     @listing.save
   end 
+
+  def search 
+    
+  end
 
 end
