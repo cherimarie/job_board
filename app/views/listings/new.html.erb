@@ -1,0 +1,53 @@
+<h1>Create Your Ad</h1>
+
+<%= form_for(@listing) do |l| %>
+
+  <ul> 
+  <% @listing.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+  </ul> 
+
+  <h4>Job Information</h4>
+  <p>
+    <%= l.label :title %> <br />
+    <%= l.text_field :title, required: true %>
+  </p>
+
+  <p>
+    <%= l.label :description %> <br />
+    <%= l.text_area :description, required: true %>
+  </p>
+
+  <p>
+    <%= l.label :headquarters %> <br />
+    <%= l.text_field :headquarters, required: true %>
+  </p>
+
+  <p>
+    <%= l.label "Application Instructions" %> <br />
+    <%= l.text_area :app_instructions, required: true %>
+  </p>
+
+  <h4>Company Information</h4>
+
+  <p>
+    <%= l.label "Company Name" %> <br />
+    <%= l.text_field :company_name, required: true %>
+  </p>
+
+  <p>
+    <%= l.label "URL" %> <br />
+    <%= l.text_field :company_url, required: true %>
+  </p>
+
+  <p>
+    <%= l.label "Email" %> <br />
+    <%= l.email_field :company_email, required: true %>
+  </p>
+
+  <p>
+    <%= l.submit %> 
+  </p>
+
+  <% end %>
