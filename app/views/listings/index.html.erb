@@ -1,7 +1,17 @@
-<h1>All Jobs</h1>
+<h1>Dev/Local Jobs</h1>
 
-<ul id="all_listings">
+<nav> 
+  I'll be a search box someday! 
+  <button>
+    <%= link_to "List your job", new_listing_path %>
+  </button>
+</nav>
+
+<ul>
   <% @listings.each do |l| %>
-    <li><%= l.title %>, <%= l.headquarters %></li>
+    <li>
+      <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
+    </li>
   <% end %>
 </ul>
+
