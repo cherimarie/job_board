@@ -3,7 +3,6 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.search(params[:search])
-
   end 
 
   def show
@@ -19,8 +18,11 @@ class ListingsController < ApplicationController
     @listing.save
   end 
 
-  def search 
-    
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    flash[:notice] = "Job listing deleted."
+    redirect_to listings_path
   end
 
 end
