@@ -1,4 +1,5 @@
 class Listing < ActiveRecord::Base
+  belongs_to :category
 
   def self.search(search)
     if search

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203192659) do
+ActiveRecord::Schema.define(version: 20140204231929) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "listings", force: true do |t|
     t.string   "title"
@@ -23,6 +29,20 @@ ActiveRecord::Schema.define(version: 20140203192659) do
     t.string   "company_name"
     t.string   "company_url"
     t.string   "company_email"
+    t.integer  "category_id"
   end
+
+  add_index "listings", ["category_id"], name: "index_listings_on_category_id"
+
+  create_table "trigrams", force: true do |t|
+    t.string  "trigram",     limit: 3
+    t.integer "score",       limit: 2
+    t.integer "owner_id"
+    t.string  "owner_type"
+    t.string  "fuzzy_field"
+  end
+
+  add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match"
+  add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner"
 
 end
