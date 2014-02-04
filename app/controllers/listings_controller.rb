@@ -14,9 +14,19 @@ class ListingsController < ApplicationController
   end 
 
   def create
-    @listing = Listing.new (listing_params)
+    @listing = Listing.new(listing_params)
     @listing.save
   end 
+
+  def edit
+    @listing = Listing.find(params[:id])
+  end 
+
+  def update
+    @listing = Listing.find(params[:id])
+    @listing.update(listing_params)
+    
+  end
 
   def destroy
     @listing = Listing.find(params[:id])

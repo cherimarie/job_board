@@ -1,3 +1,7 @@
+<h1>Review your submission</h1>
+<hr />
+
+
 <h4>Job Title:</h4>
 <%= @listing.title %>
 
@@ -15,3 +19,20 @@
 
 <h4>How to Apply: </h4>
 <p><%= @listing.app_instructions %></p>
+
+
+<hr />
+<h4>Look good?</h4>
+<!--this will submit the listing to be approved by admin, eventually -->
+<button> 
+  <%= link_to "Submit for approval", listings_path %>
+</button>
+
+<button> 
+  <%= link_to "Nope! Delete it.", listing_path(@listing), 
+  method: :delete, data: {confirm: "Really delete this job listing?"} %>
+</button>
+
+<button> 
+  <%= link_to "Nope! Let's change it.", edit_listing_path(@listing)%>
+</button>
