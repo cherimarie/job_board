@@ -1,6 +1,7 @@
 JobBoard::Application.routes.draw do
 
   resources :listings
+  resources :categories
 
   root 'listings#index'
 

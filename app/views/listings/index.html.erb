@@ -11,11 +11,15 @@
   </button>
 </nav>
 
-<ul>
-  <% @listings.each do |l| %>
-    <li>
-      <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
-    </li>
-  <% end %>
-</ul>
+
+<% @categories.each do |c| %>
+  <h4><%= c.name %> Jobs</h4>
+  <ul>
+    <% c.listings.each do |l| %>
+      <li>
+        <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 

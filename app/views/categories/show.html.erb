@@ -1,0 +1,9 @@
+<h1><%= @category.name %> Jobs</h1>
+
+  <ul>
+    <% @category.listings.each do |l| %>
+      <li>
+        <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
+      </li>
+    <% end %>
+  </ul>
