@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
   include ListingsHelper
 
+  before_filter :prepare_categories
+
   def index
     @listings = Listing.search(params[:search])
   end 
@@ -34,5 +36,10 @@ class ListingsController < ApplicationController
     flash[:notice] = "Job listing deleted."
     redirect_to listings_path
   end
+
+  private
+    def prepare_categories
+      @categories = Category.all
+    end 
 
 end
