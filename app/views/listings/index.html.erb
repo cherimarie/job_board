@@ -1,16 +1,4 @@
-<h1>Dev/Local Jobs</h1>
-
-<nav> 
-  <%= form_tag(listings_path, method: "get") do %>
-    <%= label_tag "Search for:" %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", name: nil %>
-  <% end %>
-  <button>
-    <%= link_to "List your job", new_listing_path %>
-  </button>
-</nav>
-
+<%= render partial: "header_big" %>
 
 <% @categories.each do |c| %>
   <h4><%= c.name %> Jobs</h4>

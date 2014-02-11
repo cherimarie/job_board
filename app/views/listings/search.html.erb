@@ -1,0 +1,11 @@
+<%= render partial: "header_small" %>
+
+<% @listings.each do |l| %>
+  <ul>
+      <li>
+        <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
+      </li>
+  </ul>
+<% end %>
+
+<%= link_to "Back to all jobs", listings_path %>

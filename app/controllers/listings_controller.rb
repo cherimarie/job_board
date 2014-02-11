@@ -4,8 +4,12 @@ class ListingsController < ApplicationController
   before_filter :prepare_categories
 
   def index
-    @listings = Listing.search(params[:search])
+    @listings = Listing.all
   end 
+
+  def search
+    @listings = Listing.search(params[:search])
+  end
 
   def show
     @listing = Listing.find(params[:id])
