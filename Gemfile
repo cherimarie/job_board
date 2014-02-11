@@ -30,7 +30,7 @@ group :doc do
 end
 
 group :test, :development do 
-  # Use sqlite3 as the database for Active Record
+  gem 'rspec-rails'
   gem 'sqlite3'
 end 
 
