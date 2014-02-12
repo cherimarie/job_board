@@ -8,6 +8,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'figaro'
+gem 'omniauth-google-oauth2'
+gem 'activerecord-session_store'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

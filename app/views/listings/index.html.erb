@@ -1,5 +1,15 @@
 <%= render partial: "shared/header_big" %>
 
+<!--This will go into the admin dashboard later-->
+
+
+<% if current_user %>
+  <p>Welcome, <%= current_user.name %> <%= link_to "Sign Out", signout_path %></p>
+<% else %>
+  <p><%= link_to "Sign In with Google", "/auth/google_login" %></p>
+<% end %>
+
+
 <% @categories.each do |c| %>
   <h4><%= c.name %> Jobs</h4>
   <ul>
