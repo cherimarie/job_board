@@ -8,8 +8,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-  #carrierwave is for file uploads
+  #carrierwave & rmagick are for file uploads
 gem 'carrierwave'
+gem 'rmagick'
 
 group :doc do
   gem 'sdoc', require: false
