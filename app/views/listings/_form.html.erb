@@ -52,6 +52,11 @@
   <p>
     <%= l.label "Logo (optional)" %> <br />
     <%= l.file_field :logo %>
+
+    <% if @listing.logo? %>
+      <%= image_tag @listing.logo_url.to_s %>
+      <%= l.check_box :remove_logo %> Remove Logo 
+    <% end %>
   </p>
 
   <p>
