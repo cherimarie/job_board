@@ -15,5 +15,5 @@
 /log/*.log
 /tmp
 
-cofig/application.yml
-
+# Ignore application configuration
+/config/application.yml
