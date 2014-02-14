@@ -6,6 +6,7 @@ JobBoard::Application.routes.draw do
   root 'listings#index'
 
   get 'search' => 'listings#search'
+  get 'admin' => 'listings#admin'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

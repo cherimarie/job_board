@@ -41,6 +41,10 @@ class ListingsController < ApplicationController
     redirect_to listings_path
   end
 
+  def admin 
+    @listings = Listing.all
+  end 
+
   private
     def prepare_categories
       @categories = Category.all

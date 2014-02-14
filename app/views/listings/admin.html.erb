@@ -1,0 +1,6 @@
+<%= render partial: "shared/header_small" %>
+<h1>Pending Listings</h1>
+
+<% @listings.pending.each do |l| %>
+<%= l.title %>
+<% end %>
