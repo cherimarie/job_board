@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   before_filter :prepare_categories
 
   def index
-    @listings = Listing.where("approved = ? AND date_approved > ?", true, DateTime.now.to_date-30.days)
+    @listings = Listing.approved
   end 
 
   def search

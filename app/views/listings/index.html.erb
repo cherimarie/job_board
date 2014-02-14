@@ -4,13 +4,11 @@
   <h4><%= c.name %> Jobs</h4>
   <ul>
 
-    <% @listings.each do |l| %>
-      <% if l.category_id == c.id %>
+    <% c.listings.approved.each do |l| %>
       <li>
         <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
       </li>
       <% end %>
-    <% end %>
 
   </ul>
 <% end %>
