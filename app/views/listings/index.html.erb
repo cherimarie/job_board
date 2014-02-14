@@ -3,11 +3,15 @@
 <% @categories.each do |c| %>
   <h4><%= c.name %> Jobs</h4>
   <ul>
-    <% c.listings.each do |l| %>
+
+    <% @listings.each do |l| %>
+      <% if l.category_id == c.id %>
       <li>
         <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
       </li>
+      <% end %>
     <% end %>
+
   </ul>
 <% end %>
 

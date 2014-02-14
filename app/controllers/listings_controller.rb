@@ -4,19 +4,7 @@ class ListingsController < ApplicationController
   before_filter :prepare_categories
 
   def index
-    #@listings = Listing.all
-    
-    # Listing.find_each do |l|
-    #   if l.approved = true 
-    #     if l.date_approved > DateTime.now.to_date-30.days
-    #       @listings.push l
-    #     end
-    #   end 
-    # end 
-
-
     @listings = Listing.where("approved = ? AND date_approved > ?", true, DateTime.now.to_date-30.days)
-
   end 
 
   def search
