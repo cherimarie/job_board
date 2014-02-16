@@ -1,7 +1,7 @@
 class Listing < ActiveRecord::Base
   belongs_to :category
   scope :approved, -> {where("approved = ? AND date_approved > ?",
-                       true, DateTime.now.to_date-30.days)}
+                       true, 30.days.ago)}
   scope :pending, -> {where("approved is null")}
 
 

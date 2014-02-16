@@ -35,6 +35,7 @@ class ListingsController < ApplicationController
 
   def approve
     update_listing
+    @listing.update(date_approved: Time.now)
     redirect_to admin_path
   end 
 
