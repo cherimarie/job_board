@@ -5,7 +5,7 @@
 <% @listings.pending.each do |l| %>
 
   <li>
-   <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>, <%= l.approved %>
+   <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>
  </li>
 
 <% end %>
