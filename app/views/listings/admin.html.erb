@@ -1,6 +1,14 @@
 <%= render partial: "shared/header_small" %>
 <h1>Pending Listings</h1>
 
+<ul>
 <% @listings.pending.each do |l| %>
-<%= l.title %>
+
+  <li>
+   <%= link_to l.title, "/review/#{l.id}" %>, <%= l.created_at.to_date %>, <%= l.approved %>
+ </li>
+
 <% end %>
+</ul>
+
+<p>See Rejected Listings</p>

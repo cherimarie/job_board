@@ -1,12 +1,15 @@
 JobBoard::Application.routes.draw do
 
   resources :listings
+  get 'listing/:id/review', to: 'listings#review', as: 'listing_review'
+  post 'listing/:id/review', to: 'listings#approve', as: 'listing_approve'
+
   resources :categories
 
   root 'listings#index'
 
-  get 'search' => 'listings#search'
-  get 'admin' => 'listings#admin'
+  get 'search', to: 'listings#search'
+  get 'admin', to: 'listings#admin'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

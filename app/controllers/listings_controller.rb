@@ -20,19 +20,27 @@ class ListingsController < ApplicationController
   end 
 
   def create
-    @listing = Listing.new(listing_params)
-    @listing.save
+    @listing = Listing.create(listing_params)
+    redirect_to listing_review_path(@listing)
   end 
 
   def edit
     @listing = Listing.find(params[:id])
   end 
 
-  def update
-    @listing = Listing.find(params[:id])
-    @listing.update(listing_params)
-    
-  end
+  def update 
+    update_listing
+    redirect_to listing_review_path(@listing)
+  end 
+
+  def approve
+    update_listing
+    redirect_to admin_path
+  end 
+
+  def submit 
+    update
+  end 
 
   def destroy
     @listing = Listing.find(params[:id])
@@ -45,9 +53,19 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end 
 
+  def review
+    @listing = Listing.find(params[:id])
+  end 
+ 
+
   private
     def prepare_categories
       @categories = Category.all
     end 
+
+    def update_listing
+      @listing = Listing.find(params[:id])
+      @listing.update(listing_params)
+    end
 
 end
