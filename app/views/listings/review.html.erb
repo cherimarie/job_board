@@ -18,15 +18,14 @@
   <hr />
 <!-- if poster -->
 
-<button> 
+ 
   <%= link_to "Submit for approval", listings_path %>
-</button>
 
-<button> 
+
+ 
   <%= link_to "Nope! Delete it.", listing_path(@listing), 
   method: :delete, data: {confirm: "Really delete this job listing?"} %>
-</button>
 
-<button> 
+
+ 
   <%= link_to "Nope! Let's change it.", edit_listing_path(@listing)%>
-</button>
