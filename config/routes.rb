@@ -2,7 +2,7 @@ JobBoard::Application.routes.draw do
 
   resources :listings
   get 'listing/:id/review', to: 'listings#review', as: 'listing_review'
-  post 'listing/:id/review', to: 'listings#approve', as: 'listing_approve'
+  patch 'listing/:id/review', to: 'listings#approve', as: 'listing_approve'
 
   resources :categories
 
