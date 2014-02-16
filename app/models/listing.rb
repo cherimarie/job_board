@@ -3,6 +3,7 @@ class Listing < ActiveRecord::Base
   scope :approved, -> {where("approved = ? AND date_approved > ?",
                        true, 30.days.ago)}
   scope :pending, -> {where("approved is null")}
+  scope :rejected, -> {where("approved = ?", false)}
 
 
 
