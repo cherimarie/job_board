@@ -8,10 +8,13 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+#bcrypt encrypts passwords for us. how nice. 
 gem 'bcrypt-ruby', '~> 3.1.0'
+#figaro gives you safe space to store sensitive stuff, like gmail passwords. 
+#to cofig ENV on heroku, run "rake figaro:heroku"
+gem 'figaro'
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
