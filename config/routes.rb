@@ -4,6 +4,10 @@ JobBoard::Application.routes.draw do
 
   resources :users
 
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
   resources :listings
   get 'listing/:id/review', to: 'listings#review', as: 'listing_review'
   patch 'listing/:id/review', to: 'listings#approve', as: 'listing_approve'
