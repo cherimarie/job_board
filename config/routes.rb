@@ -1,5 +1,9 @@
 JobBoard::Application.routes.draw do
 
+  resources :sessions
+  
+  resources :users
+
   resources :listings
   get 'listing/:id/review', to: 'listings#review', as: 'listing_review'
   patch 'listing/:id/review', to: 'listings#approve', as: 'listing_approve'
