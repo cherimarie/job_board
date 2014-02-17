@@ -1,5 +1,7 @@
 JobBoard::Application.routes.draw do
 
+  resources :password_resets
+  
   resources :sessions
 
   resources :users
