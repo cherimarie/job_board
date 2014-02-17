@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
   before_filter :prepare_categories
   before_filter :load_listing, only: [:show, :edit, :update, :approve, 
                                       :review, :destroy]
+  before_filter :authorize, only: [:approve]                                     
 
   def index
     @listings = Listing.approved
