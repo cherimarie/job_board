@@ -11,6 +11,9 @@ gem 'jbuilder', '~> 1.2'
   #carrierwave & rmagick are for file uploads
 gem 'carrierwave'
 gem 'rmagick'
+#fog allows carrierwave to work with S3
+gem "fog", "~> 1.3.1"
+gem 'figaro'
 
 group :doc do
   gem 'sdoc', require: false
