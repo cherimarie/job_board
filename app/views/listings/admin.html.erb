@@ -1,8 +1,10 @@
 <%= render partial: "shared/header_small" %>
 
 <% if current_user %>
+
   Logged in as <%= current_user.email %>
   <%= link_to "Log Out", logout_path %>
+  <%= link_to "Manage Users", new_user_path %>
 
 <h1>Pending Listings</h1>
 
