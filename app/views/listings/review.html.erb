@@ -3,29 +3,27 @@
 <%= render partial: "review_listing" %>
 
 <hr />
-<!-- if Admin -->
-<h4>Look good?</h4>
-<!--this will submit the listing to be approved by admin, eventually -->
+
+<% if current_user %>
+  <h4>Look good?</h4>
+
 
   <%= link_to "Cancel", admin_path%>
 
 
-<%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
-    Approved? <%= f.check_box :approved %>
-<%= f.submit "Save" %>
-  <% end %>
+  <%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
+      Approved? <%= f.check_box :approved %>
+  <%= f.submit "Save" %>
+    <% end %>
 
-  <hr />
+<% else %>
 <!-- if poster -->
 
- 
   <%= link_to "Submit for approval", listings_path %>
-
-
  
   <%= link_to "Nope! Delete it.", listing_path(@listing), 
   method: :delete, data: {confirm: "Really delete this job listing?"} %>
-
-
  
   <%= link_to "Nope! Let's change it.", edit_listing_path(@listing)%>
+
+<% end %>

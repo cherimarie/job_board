@@ -1,5 +1,8 @@
 <%= render partial: "shared/header_small" %>
- <%= link_to "Log In", new_session_path %>
+
+<% if current_user %>
+  Logged in as <%= current_user.email %>
+  <%= link_to "Log Out", session_path("current"), method: "delete" %>
 
 <h1>Pending Listings</h1>
 
@@ -23,3 +26,8 @@
 
 <% end %>
 </ul>
+
+<!-- user visible content ends here -->
+<% else %>
+ <%= link_to "Log In", new_session_path %>
+<% end %>

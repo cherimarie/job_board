@@ -1,7 +1,7 @@
 JobBoard::Application.routes.draw do
 
   resources :sessions
-  
+
   resources :users
 
   resources :listings
@@ -13,7 +13,7 @@ JobBoard::Application.routes.draw do
   root 'listings#index'
 
   get 'search', to: 'listings#search'
-  get 'admin', to: 'listings#admin'
+  get 'admin', to: 'listings#admin', as: 'admin'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
