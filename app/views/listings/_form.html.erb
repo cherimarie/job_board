@@ -1,4 +1,4 @@
-<%= form_for(@listing) do |l| %>
+<%= form_for @listing do |l| %>
 
   <ul> 
   <% @listing.errors.full_messages.each do |error| %>
@@ -47,6 +47,16 @@
   <p>
     <%= l.label "Email" %> <br />
     <%= l.email_field :company_email, required: true %>
+  </p>
+
+  <p>
+    <%= l.label "Logo (optional)" %> <br />
+    <%= l.file_field :logo %>
+
+    <% if @listing.logo? %>
+      <%= image_tag @listing.logo_url %>
+      <%= l.check_box :remove_logo %> Remove Logo 
+    <% end %>
   </p>
 
   <p>

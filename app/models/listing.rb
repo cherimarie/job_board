@@ -1,5 +1,6 @@
 class Listing < ActiveRecord::Base
   belongs_to :category
+  mount_uploader :logo, LogoUploader
 
   def self.search(search)
     if search

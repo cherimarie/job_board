@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204231929) do
+ActiveRecord::Schema.define(version: 20140213174900) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -30,8 +30,41 @@ ActiveRecord::Schema.define(version: 20140204231929) do
     t.string   "company_url"
     t.string   "company_email"
     t.integer  "category_id"
+    t.string   "logo"
   end
 
   add_index "listings", ["category_id"], name: "index_listings_on_category_id"
+
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
+
+  create_table "trigrams", force: true do |t|
+    t.string  "trigram",     limit: 3
+    t.integer "score",       limit: 2
+    t.integer "owner_id"
+    t.string  "owner_type"
+    t.string  "fuzzy_field"
+  end
+
+  add_index "trigrams", ["owner_id", "owner_type", "fuzzy_field", "trigram", "score"], name: "index_for_match"
+  add_index "trigrams", ["owner_id", "owner_type"], name: "index_by_owner"
+
+  create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "refresh_token"
+    t.string   "access_token"
+    t.datetime "expires"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
