@@ -1,5 +1,6 @@
 class Listing < ActiveRecord::Base
   belongs_to :category
+  mount_uploader :logo, LogoUploader
 
   validates :title, presence: true
   validates :description, presence: true
