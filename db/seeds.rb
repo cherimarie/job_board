@@ -8,5 +8,5 @@
 
 Category.create([ { name: 'Design' }, { name: 'Programming' }, 
                   { name: 'Business/Exec' }, { name: 'System Administrator' }, 
-                  { name: 'Copywriter' }, { name: 'Custom Service/Support' }, 
+                  { name: 'Copywriter' }, { name: 'Customer Service/Support' }, 
                   { name: 'Miscellaneous' }])
