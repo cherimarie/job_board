@@ -54,7 +54,7 @@
     <%= l.file_field :logo %>
 
     <% if @listing.logo? %>
-      <%= image_tag @listing.logo_url.to_s %>
+      <%= image_tag @listing.logo_url %>
       <%= l.check_box :remove_logo %> Remove Logo 
     <% end %>
   </p>
