@@ -5,9 +5,6 @@ class Listing < ActiveRecord::Base
   scope :pending, -> {where("approved is null")}
   scope :rejected, -> {where("approved = ?", false)}
 
-
-
-
   validates :title, presence: true
   validates :description, presence: true
   validates :headquarters, presence: true
@@ -24,4 +21,5 @@ class Listing < ActiveRecord::Base
       find(:all)
     end
   end
+  
 end

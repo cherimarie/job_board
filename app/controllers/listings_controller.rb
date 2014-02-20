@@ -40,10 +40,6 @@ class ListingsController < ApplicationController
     redirect_to admin_path
   end 
 
-  def submit 
-    update
-  end 
-
   def destroy
     @listing.destroy
     flash[:notice] = "Job listing deleted."
@@ -54,9 +50,6 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end 
 
-  def review
-  end 
- 
 
   private
 
