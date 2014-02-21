@@ -38,3 +38,9 @@ Listing.create([{title: 'Front End Developer',
                 company_email: 'bob@example.com', 
                 category_id: 1, approved: true, 
                 date_approved: DateTime.new(2014,2,5,19)}])
+
+u = User.new
+u.email = 'babs@example.com'
+u.password = 'badgerparty'
+u.password_confirmation = 'badgerparty'
+u.save!
