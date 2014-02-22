@@ -52,6 +52,7 @@
   <p>
     <%= l.label "Logo (optional)" %> <br />
     <%= l.file_field :logo %>
+    Supported file types: jpg, jpeg, png, gif, bmp
 
     <% if @listing.logo? %>
       <%= image_tag @listing.logo_url %>
