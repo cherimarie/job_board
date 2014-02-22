@@ -1,11 +1,25 @@
 JobBoard::Application.routes.draw do
 
+  resources :password_resets
+  
+  resources :sessions
+
+  resources :users
+
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+
   resources :listings
+  get 'listing/:id/review', to: 'listings#review', as: 'listing_review'
+  patch 'listing/:id/review', to: 'listings#approve', as: 'listing_approve'
+
   resources :categories
 
   root 'listings#index'
 
-  get 'search' => 'listings#search'
+  get 'search', to: 'listings#search'
+  get 'admin', to: 'listings#admin', as: 'admin'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
