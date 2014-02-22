@@ -15,6 +15,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
+    session[:user_id] = nil
     @user = User.find_by_password_reset_token!(params[:id])
       #humans, read this line as "if reset sent at > 24 hours ago"
     if @user.password_reset_sent_at < 24.hours.ago
