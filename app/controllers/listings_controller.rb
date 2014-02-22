@@ -22,8 +22,13 @@ class ListingsController < ApplicationController
   end 
 
   def create
-    @listing = Listing.create(listing_params)
-    redirect_to listing_review_path(@listing)
+    @listing = Listing.new(listing_params)
+    if @listing.save
+      redirect_to listing_review_path(@listing)
+    else 
+      redirect_to new_listing_path
+      flash[:error] = "Listing has not saved correctly, please try again."
+    end 
   end 
 
   def edit
