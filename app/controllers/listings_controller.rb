@@ -42,6 +42,7 @@ class ListingsController < ApplicationController
   def approve
     update_listing(@listing)
     @listing.update(date_approved: Time.now)
+    SubmitterMailer.payment_instructions(@listing).deliver
     redirect_to admin_path
   end 
 
