@@ -5,6 +5,9 @@ class Listing < ActiveRecord::Base
   scope :pending, -> {where("approved is null")}
   scope :rejected, -> {where("approved = ?", false)}
 
+  mount_uploader :logo, LogoUploader
+
+
   validates :title, presence: true
   validates :description, presence: true
   validates :headquarters, presence: true
@@ -16,7 +19,9 @@ class Listing < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['title LIKE ? OR description LIKE ? OR company_name LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"] )
+      find(:all, conditions: 
+        ['title LIKE ? OR description LIKE ? OR company_name LIKE ?', 
+        "%#{search}%", "%#{search}%", "%#{search}%"] )
     else
       find(:all)
     end

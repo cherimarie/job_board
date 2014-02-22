@@ -2,6 +2,8 @@
 
 Ruby 2.0.0
 
+http://dl-job-board.herokuapp.com/
+
 ###App description
  - Landing page is public, list of all approved jobs, with search function.
  - Jobs are organized by category.

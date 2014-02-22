@@ -13,6 +13,13 @@ gem 'bcrypt-ruby', '~> 3.1.0'
 #figaro gives you safe space to store sensitive stuff, like gmail passwords. 
 #to cofig ENV on heroku, run "rake figaro:heroku"
 gem 'figaro'
+#carrierwave & rmagick are for file uploads
+gem 'carrierwave'
+gem 'rmagick'
+#fog allows carrierwave to work with S3
+gem "fog", "~> 1.3.1"
+
+
 
 group :doc do
   gem 'sdoc', require: false

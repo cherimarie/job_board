@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Category.create([ { name: 'Design' }, { name: 'Programming' }, 
-                  { name: 'Business/Exec' }, { name: 'System Administrator' }, 
-                  { name: 'Copywriter' }, { name: 'Custom Service/Support' }, 
+                  { name: 'Business/Exec' }, { name: 'SystemAdministrator' },
+                  { name: 'Copywriter' }, { name: 'Customer Service/Support' }, 
                   { name: 'Miscellaneous' }])
 
 Listing.create([{title: 'Front End Developer', 
@@ -44,3 +44,4 @@ u.email = 'babs@example.com'
 u.password = 'badgerparty'
 u.password_confirmation = 'badgerparty'
 u.save!
+
