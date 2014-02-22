@@ -18,6 +18,8 @@ gem 'carrierwave'
 gem 'rmagick'
 #fog allows carrierwave to work with S3
 gem "fog", "~> 1.3.1"
+#stripe for payment processing
+gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
 
 
 
