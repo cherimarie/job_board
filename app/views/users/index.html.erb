@@ -1,0 +1,13 @@
+<%= render partial: "shared/header_small" %>
+<h4>Current Admins</h4>
+
+<ul>
+  <% @users.each do |u| %>
+      <li>
+        <%= u.email %>
+      </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create an Admin", new_user_path %>
+<%= link_to "Back to Listings", admin_path %>
