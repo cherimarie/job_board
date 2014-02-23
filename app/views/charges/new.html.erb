@@ -1,9 +1,8 @@
 <%= form_tag charges_path do %>
-  <article>
     <label class="amount">
-      <span>Amount: $50.00</span>
+      <p>Product: 30 day job listing on DevLocal Jobs</p>
+      <p>Amount: $50.00</p>
     </label>
-  </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
