@@ -26,5 +26,18 @@ class Listing < ActiveRecord::Base
       find(:all)
     end
   end
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while Listing.exists?(column => self[column])
+  end
+
+  def send_payment_prompt
+    generate_token(:payment_token)
+    save!
+    SubmitterMailer.payment_instructions(self).deliver
+  end
+
   
 end

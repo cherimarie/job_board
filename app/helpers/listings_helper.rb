@@ -6,7 +6,8 @@ module ListingsHelper
                                     :company_name, :company_url, 
                                     :company_email, :category_id,
                                     :approved, :date_approved, 
-                                    :logo, :remove_logo)
+                                    :logo, :remove_logo, :payment_token,
+                                    :payment)
 
   end 
   
