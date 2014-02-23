@@ -1,15 +1,20 @@
 class ChargesController < ApplicationController
 
   def new
-    @listing = Listing.find_by_payment_token!(params[:token])
+    @listing = Listing.find_by_payment_token(params[:token])
+
+    if @listing.nil?
+      redirect_to listings_path
+      flash[:error] = "That listing has already been paid for!"
+    end 
   end
 
   def create
     # Amount in cents
     @amount = 5000
     @listing = Listing.find_by_id(params[:listing_id])
-
-    @listing.update(payment: true) 
+    #destroy token so it can only be used once to make a payment
+    @listing.update(payment: true, payment_token: nil) 
 
 
     customer = Stripe::Customer.create(
