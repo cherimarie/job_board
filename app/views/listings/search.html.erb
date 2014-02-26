@@ -1,11 +1,11 @@
-<%= render partial: "shared/header_small" %>
+<%= render partial: "shared/header_big" %>
 
-<% @listings.each do |l| %>
-  <ul>
-      <li>
-        <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
-      </li>
-  </ul>
-<% end %>
+<div class="container">
+  <h1 class="heading-primary">Search Results</h1>
 
-<%= link_to "Back to all jobs", listings_path %>
+  <%= render partial: "shared/listing_group" %>
+
+  <%= link_to "Back to all jobs", listings_path, :class => "btn pull-right" %>
+</div>
+
+<%= render partial: "shared/footer" %>

@@ -1,13 +1,19 @@
-<h1>Dev/Local Jobs</h1>
+<header class="header">
+  <div class="container">
+    <a href="<%= root_url %>">
+      <h1 class="logo">
+        <span class="visuallyhidden">DevLocal Jobs</span>
+      </h1>
+    </a>
 
-<nav> 
-  <%= form_tag "/search", method: "get" do %>
-    <%= label_tag "Search for:" %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", name: nil %>
-  <% end %>
+    <%= form_tag "/search", method: "get" do %>
+      <%= label_tag "Search for:" %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", name: nil %>
+    <% end %>
 
-  <button>
     <%= link_to "List your job", new_listing_path %>
-  </button>
-</nav>
+  </div>
+</header>
+
+<main class="content">

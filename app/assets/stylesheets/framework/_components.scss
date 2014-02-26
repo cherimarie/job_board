@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.content {
+  flex: 1;
+  padding: 60px 0;
+}
+
+/* ==========================================================================
+   Headings
+   ========================================================================== */
+
+.heading-primary {
+  text-align: center;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 8px 10px 7px;
+  border: 1px solid lighten($blue, 45%);
+  border-radius: 4px;
+
+  background: $white;
+  color: $blue;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.15s ease;
+  transition-property: background-color, border-color;
+
+  &:hover {
+    border-color: $blue;
+
+    background: $blue;
+    color: $white;
+  }
+}

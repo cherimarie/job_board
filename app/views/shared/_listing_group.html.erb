@@ -1,0 +1,19 @@
+<ul class="listing-group">
+  <% @listings.each do |l| %>
+    <li class="listing">
+      <a href="<%= listing_path(l.id) %>">
+        <strong class="listing-bow listing-section">
+          <span><%= l.company_name %></span>
+        </strong>
+
+        <h3 class="listing-title listing-section">
+          <%= l.title %>
+        </h3>
+
+        <div class="listing-stern listing-section">
+          Feb 25
+        </div>
+      </a>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+.header {
+  padding: 24px 0;
+
+  background: $blue;
+  color: $white;
+}
+
+.logo {
+  display: inline-block;
+  width: 250px;
+  height: 40px;
+  margin: 0;
+
+  background-image: image-url("logo.svg");
+  background-repeat: no-repeat;
+}

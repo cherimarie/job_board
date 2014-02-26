@@ -1,11 +1,92 @@
 .listing-group {
+  margin: 0 0 24px;
   padding: 0;
   list-style: none;
 }
 
 .listing {
-  margin-right: -12px;
-  margin-left: -12px;
-  padding: 12px;
-  border-bottom: 1px solid #dedede;
+  overflow: hidden;
+  height: 68px;
+  margin-bottom: 16px;
+  border: 1px solid $grey-light;
+  border-radius: 6px;
+
+  background: $grey-ultralight;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  font-size: 0;
+  transition: 0.3s ease;
+  transition-property: background-color, border-color;
+
+  &:hover {
+    border-color: darken($grey-light, 5%);
+
+    background-color: darken($grey-ultralight, 5%);
+  }
+
+  > a {
+    display: block;
+    height: 100%;
+
+    color: $grey-medium;
+  }
+}
+
+.listing-section {
+  position: relative;
+
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 16px;
+
+  font-size: 16px;
+  line-height: 1;
+}
+
+.listing-bow {
+  background: $white;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  span {
+    position: relative;
+    z-index: 1;
+
+    line-height: 1;
+  }
+
+  &:after {
+    content: "";
+
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+
+    width: 20px;
+
+    background: $white;
+    box-shadow: 1px 0 0 rgba(0,0,0,0.1);
+    transform: rotate(15deg);
+  }
+}
+
+.listing-title {
+  margin: 0 0 0 16px;
+
+  color: $blue;
+  font-size: 18px;
+  text-decoration: none;
+
+  .listing:hover & {
+    text-decoration: underline;
+  }
+}
+
+.listing-stern {
+  float: right;
+
+  font-size: 14px;
 }

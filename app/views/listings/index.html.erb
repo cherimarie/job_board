@@ -1,15 +1,16 @@
 <%= render partial: "shared/header_big" %>
 
-<% @categories.each do |c| %>
-  <h4><%= c.name %> Jobs</h4>
-  <ul>
+<div class="container">
+  <% @categories.each do |c| %>
+    <h4><%= c.name %> Jobs</h4>
+    <ul>
 
-    <% c.listings.approved.each do |l| %>
-      <li>
-        <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
-      </li>
-      <% end %>
+      <% c.listings.approved.each do |l| %>
+        <li>
+          <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
+        </li>
+        <% end %>
 
-  </ul>
-<% end %>
-
+    </ul>
+  <% end %>
+</div>
