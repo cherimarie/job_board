@@ -39,5 +39,11 @@ class Listing < ActiveRecord::Base
     SubmitterMailer.payment_instructions(self).deliver
   end
 
+  def send_update_listing
+    generate_token(:update_listing_token)
+    save!
+    SubmitterMailer.update_listing(self).deliver
+  end
+
   
 end

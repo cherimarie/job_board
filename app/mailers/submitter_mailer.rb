@@ -5,4 +5,10 @@ class SubmitterMailer < ActionMailer::Base
     @listing = listing
     mail to: listing.company_email, subject: "Your listing on DevLocal Jobs"
   end
+
+  def update_listing(listing)
+    @listing = listing
+    mail to: listing.company_email, subject: "Your listing is live on DevLocal Jobs"
+  end
+
 end

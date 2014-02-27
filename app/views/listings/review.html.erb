@@ -3,7 +3,7 @@
 <%= render partial: "review_listing" %>
 
 <hr />
-
+<!-- if admin -->
 <% if current_user %>
   <h4>Look good?</h4>
 
@@ -17,7 +17,8 @@
     <% end %>
 
 <% else %>
-<!-- if poster -->
+<!-- if submitter -->
+<!-- if listing has already been approved, it can only be reached by token link-->
 
   <%= link_to "Submit for approval", listings_path %>
  
