@@ -3,22 +3,32 @@
 <%= render partial: "review_listing" %>
 
 <hr />
+<h4>Look good?</h4>
+
 <!-- if admin -->
 <% if current_user %>
-  <h4>Look good?</h4>
-
-
-  <%= link_to "Cancel", admin_path%>
-
 
   <%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
       Approved? <%= f.check_box :approved %>
-  <%= f.submit "Save" %>
-    <% end %>
+    <%= f.submit "Save" %>
+  <% end %>
 
+  <%= link_to "Cancel", admin_path%>
+Admin
+
+
+<!-- if listing has already been approved, and the url token matches listing token -->
+<% elsif @show_bool == true %>
+
+ <%= link_to "Delete this listing", listing_path(@listing), 
+  method: :delete, data: {confirm: "Really delete this job listing?"} %>
+ 
+  <%= link_to "Edit this listing", edit_listing_path(@listing)%>
+Approved <%= @listing.id %>
+
+
+<!-- if freshly-submitted listing -->
 <% else %>
-<!-- if submitter -->
-<!-- if listing has already been approved, it can only be reached by token link-->
 
   <%= link_to "Submit for approval", listings_path %>
  
@@ -26,5 +36,7 @@
   method: :delete, data: {confirm: "Really delete this job listing?"} %>
  
   <%= link_to "Nope! Let's change it.", edit_listing_path(@listing)%>
+
+Not approved <%= @listing.approved? %>
 
 <% end %>
