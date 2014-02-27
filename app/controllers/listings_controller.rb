@@ -56,24 +56,6 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end 
 
-  def review 
-    #find listing
-    listing = Listing.find_by(params[:id])
-
-    if listing.approved?
-      if (params[:token])
-        @show_bool = true
-        @listing = Listing.find_by_update_listing_token(params[:token])
-      else
-        @show_bool = false 
-      end 
-    else
-      @listing = listing 
-    end
-
-    #if listing is approved, then must receive token to serve listing
-  end 
-
 
   private
 
