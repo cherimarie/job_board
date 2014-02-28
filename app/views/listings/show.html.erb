@@ -1,21 +1,41 @@
-<%= render partial: "shared/header_small" %>
+<%= render partial: "shared/header_big" %>
 
-<h1><%= @listing.title %></h1>
-<h4><%= @listing.category.name %></h4>
-<%= image_tag @listing.logo_url%>
+<div class="container">
+  <article class="post">
+    <header class="post-section post-header module">
+      <h1 class="heading-primary"><%= @listing.title %></h1>
+    </header>
 
-<p><%= @listing.company_name %></p>
-<p>Headquarters: <%= @listing.headquarters %></p>
-<%= @listing.company_url %>
-<hr />
+    <p class="post-subhead"><%= @listing.category.name %></p>
 
-<h4>Job Description: </h4>
-<p><%= @listing.description %></p>
+    <div class="post-content-wrapper">
+      <aside class="post-meta post-section module">
+        <% if @listing.logo_url %>
+          <%= image_tag @listing.logo_url %>
+        <% end %>
 
-<h4>How to Apply: </h4>
-<p><%= @listing.app_instructions %></p>
+        <ul class="post-meta-list">
+          <li><%= @listing.company_name %></li>
+          <li>Headquarters: <%= @listing.headquarters %></li>
+          <li><a href="<%= @listing.company_url %>"><%= @listing.company_url %></a></li>
+        </ul>
+      </aside>
 
+      <div class="post-content post-section module">
+        <h2 class="heading-secondary">Job Description: </h2>
+        <p><%= @listing.description %></p>
 
-<%= link_to "Back to all jobs", listings_path %>
+        <h3 class="heading-tertiary">How to Apply: </h3>
+        <p><%= @listing.app_instructions %></p>
+      </div>
+    </div>
+  </article>
 
-<%= link_to "See all #{@listing.category.name} jobs", category_path(@listing.category) %>
+  <p class="clearfix">
+    <%= link_to "Back to all jobs", listings_path, :class => "btn pull-right" %>
+  </p>
+
+  <p class="clearfix">
+    <%= link_to "See all #{@listing.category.name} jobs", category_path(@listing.category), :class => "btn pull-right" %>
+  </p>
+</div>

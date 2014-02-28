@@ -52,6 +52,26 @@ h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr 
   margin: 0 0 24px;
 }
 
+.module > {
+  h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+a {
+  color: $blue;
+
+  &:hover {
+    color: $grey-dark;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.

@@ -2,15 +2,16 @@
 
 <div class="container">
   <% @categories.each do |c| %>
-    <h4><%= c.name %> Jobs</h4>
-    <ul>
+    <h2 class="heading-primary"><%= c.name %> Jobs</h4>
 
+    <%= render partial: "shared/listing_group" %>
+
+    <ul>
       <% c.listings.approved.each do |l| %>
         <li>
           <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
         </li>
-        <% end %>
-
+      <% end %>
     </ul>
   <% end %>
 </div>
