@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
 
   before_filter :prepare_categories
   before_filter :load_listing, only: [:show, :edit, :update, :approve, 
-                                      :review, :destroy]
+                                      :review, :destroy, :submitter_review, :admin_review]
   before_filter :authorize, only: [:approve]                                     
 
   def index
@@ -24,7 +24,7 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
-      redirect_to listing_review_path(@listing)
+      redirect_to submitter_review_path(@listing)
     else 
       redirect_to new_listing_path
       flash[:error] = "Listing has not saved correctly, please try again."
@@ -36,7 +36,7 @@ class ListingsController < ApplicationController
 
   def update 
     update_listing(@listing)
-    redirect_to listing_review_path(@listing)
+    redirect_to submitter_review_path(@listing)
   end 
 
   def approve
@@ -56,6 +56,19 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end 
 
+  def submitter_review
+     if @listing.approved == true 
+      flash[:error] = "That page is not acessible."
+      redirect_to listings_path
+   end 
+  end
+
+  def admin_review
+  end
+
+  def live_listing_review
+    @listing = Listing.find_by_update_listing_token(params[:token])
+  end
 
   private
 

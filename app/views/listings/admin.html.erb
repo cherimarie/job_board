@@ -12,7 +12,7 @@
 <% @listings.pending.each do |l| %>
 
   <li>
-   <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>
+   <%= link_to l.title, admin_review_path(l.id) %>, <%= l.created_at.to_date %>
  </li>
 
 <% end %>
@@ -23,7 +23,7 @@
 <% @listings.rejected.each do |l| %>
 
   <li>
-   <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>
+   <%= link_to l.title, admin_review_path(l.id) %>, <%= l.created_at.to_date %>
  </li>
 
 <% end %>
