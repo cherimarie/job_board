@@ -1,0 +1,12 @@
+<%= render partial: "shared/header_small" %>
+
+<%= render partial: "review_listing" %>
+
+<hr />
+<h4> Look good? </h4>
+
+  <%= link_to "Nope! Delete it.", listing_path(@listing), 
+  method: :delete, data: {confirm: "Really delete this job listing?"} %>
+ 
+  <%= link_to "Nope! Let's change it.", edit_listing_path(@listing)%>
+  <!-- should we be allowing folks to change a listing that's already been approved? -->

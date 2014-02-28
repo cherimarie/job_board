@@ -16,9 +16,11 @@ JobBoard::Application.routes.draw do
   resources :listings
 
   get 'listing/:id/submitter_review', to: 'listings#submitter_review', as: 'submitter_review'
-  
+
   get 'listing/:id/admin_review', to: 'listings#admin_review', as: 'admin_review'
   patch 'listing/:id/admin_review', to: 'listings#approve', as: 'listing_approve'
+
+  get 'listing/:id/live_listing_review', to: 'listings#live_listing_review', as: 'live_listing_review'
 
   get 'search', to: 'listings#search'
   get 'admin', to: 'listings#admin', as: 'admin'

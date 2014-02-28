@@ -36,7 +36,8 @@ class ListingsController < ApplicationController
 
   def update 
     update_listing(@listing)
-    redirect_to submitter_review_path(@listing)
+    redirect_to listings_path(@listing)
+    flash[:notice] = "Listing has been updated."
   end 
 
   def approve
@@ -68,6 +69,11 @@ class ListingsController < ApplicationController
 
   def live_listing_review
     @listing = Listing.find_by_update_listing_token(params[:token])
+
+    if @listing.nil?
+      redirect_to listings_path
+      flash[:error] = "That page is not accessible."
+    end 
   end
 
   private
