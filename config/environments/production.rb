@@ -95,6 +95,6 @@ JobBoard::Application.configure do
   enable_starttls_auto: true
 }
 
-  config.initialize_on_precompile = true 
+  config.initialize_on_precompile = false 
 
 end
