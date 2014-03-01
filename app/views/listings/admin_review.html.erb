@@ -1,0 +1,24 @@
+<%= render partial: "shared/header_small" %>
+
+<% if current_user %>
+
+  <%= render partial: "review_listing" %>
+
+  <hr />
+
+  <h4>Look good?</h4>
+
+
+  <%= link_to "Cancel", admin_path%>
+
+
+  <%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
+      Approved? <%= f.check_box :approved %>
+  <%= f.submit "Save" %>
+    <% end %>
+
+<% else %>
+
+ <%= link_to "Log In", login_path %>
+
+<% end %>

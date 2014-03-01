@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140223001256) do
+ActiveRecord::Schema.define(version: 20140223214910) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140223001256) do
     t.datetime "date_approved"
     t.boolean  "payment"
     t.string   "payment_token"
+    t.string   "update_listing_token"
   end
 
   add_index "listings", ["category_id"], name: "index_listings_on_category_id"

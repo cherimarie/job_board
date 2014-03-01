@@ -14,7 +14,6 @@
   <ul>
   <% @listings.pending.each do |l| %>
 
-
     <li class="listing">
       <strong class="listing-bow listing-section">
               <span><%= l.company_name %></span>
@@ -22,7 +21,6 @@
      <h3 class="listing-title listing-section"><%= link_to l.title, listing_review_path(l.id) %></h3> 
      <div class="listing-stern listing-section"><%= l.created_at.strftime("%m/%d") %></div>
    </li>
-
 
   <% end %>
   </ul>

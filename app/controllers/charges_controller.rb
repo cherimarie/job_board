@@ -10,12 +10,11 @@ class ChargesController < ApplicationController
   end
 
   def create
-    # Amount in cents
     @amount = 5000
     @listing = Listing.find_by_id(params[:listing_id])
     #destroy token so it can only be used once to make a payment
     @listing.update(payment: true, payment_token: nil) 
-
+    @listing.send_update_listing
 
     customer = Stripe::Customer.create(
       :email => @listing.company_email,

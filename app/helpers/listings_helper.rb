@@ -7,7 +7,7 @@ module ListingsHelper
                                     :company_email, :category_id,
                                     :approved, :date_approved, 
                                     :logo, :remove_logo, :payment_token,
-                                    :payment)
+                                    :payment, :update_listing_logo)
 
   end 
   

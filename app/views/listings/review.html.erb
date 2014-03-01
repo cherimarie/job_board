@@ -5,21 +5,20 @@
   <%= render partial: "review_listing" %>
 
   <hr />
-
+<!-- if admin-->
   <% if current_user %>
     <h4>Look good?</h4>
-
-
-    <%= link_to "Cancel", admin_path%>
-
 
     <%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
         Approved? <%= f.check_box :approved %>
     <%= f.submit "Save" %>
       <% end %>
 
-  <% else %>
-  <!-- if poster -->
+    <%= link_to "Cancel", admin_path%>
+
+<% else %>
+<!-- if submitter -->
+<!-- if listing has already been approved, it can only be reached by token link-->
 
     <%= link_to "Submit for approval", listings_path %>
    

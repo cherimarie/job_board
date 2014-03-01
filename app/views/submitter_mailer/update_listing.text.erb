@@ -1,0 +1,12 @@
+Hi! 
+
+Thanks so much for listing your open position on DevLocal Jobs. It is now live on the site and will remain so for 30 days. 
+
+It can be viewed here:
+<%= listing_url(@listing.id) %>
+
+If you need to make any edits to it, you can do so via this link:
+
+<%= live_listing_review_url(id: @listing.id, token: @listing.update_listing_token) %>
+
+Thanks!
