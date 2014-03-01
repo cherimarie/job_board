@@ -40,6 +40,8 @@
   <% end %>
   </ul>
 
+  <%= link_to "View Active Listings", listings_path, class: "btn pull-right clearfix" %>
+
   <!-- user visible content ends here -->
   <% else %>
    <%= link_to "Log In", login_path %>
