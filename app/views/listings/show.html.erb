@@ -17,7 +17,9 @@
         <ul class="post-meta-list">
           <li><%= @listing.company_name %></li>
           <li>Headquarters: <%= @listing.headquarters %></li>
-          <li><a href="<%= @listing.company_url %>"><%= @listing.company_url %></a></li>
+
+          <!-- TODO: make this link more dependable -->
+          <li><%= link_to  @listing.company_url , ("http://" + @listing.company_url)%></li>
         </ul>
       </aside>
 
