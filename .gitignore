@@ -22,4 +22,4 @@
 /public/uploads/
 
 #Ignore stripe initializers
-/config/initializers/stripe.rb
+#/config/initializers/stripe.rb
