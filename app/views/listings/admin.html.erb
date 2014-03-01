@@ -3,18 +3,26 @@
 <div class="container">
   <% if current_user %>
 
+  <nav class="pull-right clearfix">
     Logged in as <%= current_user.email %>
-    <%= link_to "Log Out", logout_path %>
-    <%= link_to "Manage Users", users_path %>
+    <%= link_to "Log Out", logout_path, class: "btn" %>
+    <%= link_to "Manage Users", users_path, class: "btn" %>
+  </nav>
 
   <h1>Pending Listings</h1>
 
   <ul>
   <% @listings.pending.each do |l| %>
 
-    <li>
-     <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>
+
+    <li class="listing">
+      <strong class="listing-bow listing-section">
+              <span><%= l.company_name %></span>
+            </strong>
+     <h3 class="listing-title listing-section"><%= link_to l.title, listing_review_path(l.id) %></h3> 
+     <div class="listing-stern listing-section"><%= l.created_at.strftime("%m/%d") %></div>
    </li>
+
 
   <% end %>
   </ul>
@@ -23,8 +31,12 @@
   <ul>
   <% @listings.rejected.each do |l| %>
 
-    <li>
-     <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>
+    <li class="listing">
+     <strong class="listing-bow listing-section">
+              <span><%= l.company_name %></span>
+            </strong>
+     <h3 class="listing-title listing-section"><%= link_to l.title, listing_review_path(l.id) %></h3> 
+     <div class="listing-stern listing-section">Reviewed:<%= l.date_approved.strftime("%m/%d") %></div>
    </li>
 
   <% end %>
