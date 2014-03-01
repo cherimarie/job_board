@@ -10,14 +10,12 @@
 
     <h4>Look good?</h4>
 
+    <%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
+      <%= f.label :approved, "Approved?" %><%= f.check_box :approved %>
+      <%= f.submit "Save" %>
+    <% end %>
 
     <%= link_to "Cancel", admin_path%>
-
-
-    <%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
-        Approved? <%= f.check_box :approved %>
-    <%= f.submit "Save" %>
-      <% end %>
 
   <% else %>
 
