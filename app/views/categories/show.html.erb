@@ -1,6 +1,8 @@
 <%= render partial: "shared/header_big" %>
 
-<h1><%= @category.name %> Jobs</h1>
+<div class="container">
+
+  <h1><%= @category.name %> Jobs</h1>
 
   <ul>
     <% @category.listings.approved.each do |l| %>
@@ -10,8 +12,5 @@
     <% end %>
   </ul>
 
-
-
-
-
   <%= link_to "Back to all jobs", listings_path %>
+</div>

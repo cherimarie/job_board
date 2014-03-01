@@ -1,35 +1,37 @@
 <%= render partial: "shared/header_small" %>
 
-<% if current_user %>
+<div class="container">
+  <% if current_user %>
 
-  Logged in as <%= current_user.email %>
-  <%= link_to "Log Out", logout_path %>
-  <%= link_to "Manage Users", users_path %>
+    Logged in as <%= current_user.email %>
+    <%= link_to "Log Out", logout_path %>
+    <%= link_to "Manage Users", users_path %>
 
-<h1>Pending Listings</h1>
+  <h1>Pending Listings</h1>
 
-<ul>
-<% @listings.pending.each do |l| %>
+  <ul>
+  <% @listings.pending.each do |l| %>
 
-  <li>
-   <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>
- </li>
+    <li>
+     <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>
+   </li>
 
-<% end %>
-</ul>
+  <% end %>
+  </ul>
 
-<h4>Rejected Listings</h4>
-<ul>
-<% @listings.rejected.each do |l| %>
+  <h4>Rejected Listings</h4>
+  <ul>
+  <% @listings.rejected.each do |l| %>
 
-  <li>
-   <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>
- </li>
+    <li>
+     <%= link_to l.title, listing_review_path(l.id) %>, <%= l.created_at.to_date %>
+   </li>
 
-<% end %>
-</ul>
+  <% end %>
+  </ul>
 
-<!-- user visible content ends here -->
-<% else %>
- <%= link_to "Log In", login_path %>
-<% end %>
+  <!-- user visible content ends here -->
+  <% else %>
+   <%= link_to "Log In", login_path %>
+  <% end %>
+</div>

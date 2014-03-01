@@ -1,24 +1,28 @@
 <%= render partial: "shared/header_small" %>
 
-<h1>Reset Password</h1>
+<div class="container">
 
-<%= form_for @user, url: password_reset_path(params[:id]) do |f| %>
+  <h1>Reset Password</h1>
 
-  <% if @user.errors.any? %>
-      <h2>Form is invalid</h2>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <%= form_for @user, url: password_reset_path(params[:id]) do |f| %>
+
+    <% if @user.errors.any? %>
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, required: true  %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Update Password" %>
+
   <% end %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password, required: true  %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-
-  <%= f.submit "Update Password" %>
-
-<% end %>
+</div>

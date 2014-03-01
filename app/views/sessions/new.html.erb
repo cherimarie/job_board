@@ -1,17 +1,21 @@
 <%= render partial: "shared/header_small" %>
 
-<h1>Log In</h1>
+<div class="container">
 
-<%= form_tag sessions_path do %>
+  <h1>Log In</h1>
 
-  <%= label_tag :email %>
-  <%= email_field_tag :email, params[:email] %><br />
+  <%= form_tag sessions_path do %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %><br />
+    <%= label_tag :email %>
+    <%= email_field_tag :email, params[:email] %><br />
 
-  <%= link_to "forgotten password?", new_password_reset_path %><br />
-  
-  <%= submit_tag "Log In" %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %><br />
 
-<% end %>
+    <%= link_to "forgotten password?", new_password_reset_path %><br />
+    
+    <%= submit_tag "Log In" %>
+
+  <% end %>
+
+</div>

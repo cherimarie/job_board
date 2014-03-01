@@ -1,15 +1,21 @@
-Hi there, <%= @listing.company_email %>!
+<%= render partial: "shared/header_small" %>
 
-<%= form_tag charges_path do %>
-    <label class="amount">
-      <p>Product: 30 day job listing on DevLocal Jobs</p>
-      <p>Amount: $50.00</p>
-    </label>
+<div class="container">
 
-  <%= hidden_field_tag :listing_id, @listing.id %>
-  
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="5000"></script>
-<% end %>
+  <p>Hi there, <%= @listing.company_email %>!</p>
+
+  <%= form_tag charges_path do %>
+      <label class="amount">
+        <p>Product: 30 day job listing on DevLocal Jobs</p>
+        <p>Amount: $50.00</p>
+      </label>
+
+    <%= hidden_field_tag :listing_id, @listing.id %>
+    
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="5000"></script>
+  <% end %>
+
+</div>
