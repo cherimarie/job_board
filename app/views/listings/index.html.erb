@@ -5,7 +5,7 @@
     <h2 class="heading-primary"><%= c.name %> Jobs</h4>
 
     <ul class="listing-group">
-      <% c.listings.approved.each do |l| %>
+      <% c.listings.approved.recent10.each do |l| %>
         <li class="listing">
           <a href="<%= listing_path(l.id) %>">
             <strong class="listing-bow listing-section">
@@ -24,5 +24,7 @@
       <% end %>
     </ul>
 
+  <p class="clearfix"><%= link_to "See all #{c.name} jobs", 
+  category_path(c), :class => "btn pull-right" %></p>
   <% end %>
 </div>

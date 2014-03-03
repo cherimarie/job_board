@@ -2,11 +2,11 @@ class Listing < ActiveRecord::Base
   belongs_to :category
   scope :approved, -> {where("approved = ? AND date_approved > ? AND payment = ?",
                        true, 30.days.ago, true)}
+  scope :recent10, ->{where("approved = ?", true).order("date_approved DESC").limit(10)}
   scope :pending, -> {where("approved is null")}
   scope :rejected, -> {where("approved = ?", false)}
 
   mount_uploader :logo, LogoUploader
-
 
   validates :title, presence: true
   validates :description, presence: true
