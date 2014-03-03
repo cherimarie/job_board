@@ -2,15 +2,31 @@
 
 <div class="container">
 
-  <h1><%= @category.name %> Jobs</h1>
+  <h2 class="heading-primary"><%= @category.name %> Jobs</h2>
 
-  <ul>
+  <ul class="listing-group">
     <% @category.listings.approved.each do |l| %>
-      <li>
-        <%= link_to l.title, listing_path(l.id) %>, <%= l.headquarters %>
+      <li class="listing">
+
+        <a href="<%= listing_path(l.id) %>">
+          <strong class="listing-bow listing-section">
+            <span><%= l.company_name %></span>
+          </strong>
+
+          <h3 class="listing-title listing-section">
+            <%= l.title %>
+          </h3>
+
+          <div class="listing-stern listing-section">
+            <%= l.date_approved.strftime("%m/%d") %>
+          </div>
+        </a> 
+
       </li>
     <% end %>
   </ul>
 
-  <%= link_to "Back to all jobs", listings_path %>
+  <%= link_to "Back to all jobs", listings_path, class: "btn pull-right clearfix" %>
 </div>
+
+
