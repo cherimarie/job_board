@@ -3,7 +3,7 @@
 <div class="container">
 
   <h2>Thanks, you paid $50.00!</h2>
-  <p>Your listing will be active until <%= (Time.now + 30.days).strftime("%m/%d/%Y") %>. </p>
+  <p>Your listing is now live and will be active until <%= (Time.now + 30.days).strftime("%m/%d/%Y") %>. It can be viewed <%= link_to "here", listing_url(@listing.id) %>.</p>
   <p>Check your email for links to edit or delete it. </p>
 
 </div>
