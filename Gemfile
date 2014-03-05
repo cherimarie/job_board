@@ -22,6 +22,8 @@ gem "fog", "~> 1.3.1"
 gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
 #autoprefixer
 gem 'autoprefixer-rails'
+#parses markdown input into html
+gem 'redcarpet'
 
 
 
