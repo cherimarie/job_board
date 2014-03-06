@@ -16,7 +16,7 @@
 
 
 <h4>Job Description: </h4>
-<p><%= @listing.description %></p>
+<p><%= markdown.render(@listing.description).html_safe %></p>
 
 <h4>How to Apply: </h4>
 <p><%= @listing.app_instructions %></p>

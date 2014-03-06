@@ -25,7 +25,7 @@
 
       <div class="post-content post-section module">
         <h2 class="heading-secondary">Job Description: </h2>
-        <p><%= @listing.description %></p>
+        <p><%= markdown.render(@listing.description).html_safe  %></p>
 
         <h3 class="heading-tertiary">How to Apply: </h3>
         <p><%= @listing.app_instructions %></p>
