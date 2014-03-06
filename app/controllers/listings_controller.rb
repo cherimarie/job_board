@@ -36,7 +36,12 @@ class ListingsController < ApplicationController
 
   def update 
     update_listing(@listing)
-    redirect_to submitter_review_path(@listing)
+    if @listing.approved == true 
+      flash[:notice] = "Listing has been updated."
+      redirect_to listings_path
+    else 
+      redirect_to submitter_review_path(@listing)
+    end 
   end 
 
   def approve
