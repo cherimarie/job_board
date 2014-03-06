@@ -36,8 +36,7 @@ class ListingsController < ApplicationController
 
   def update 
     update_listing(@listing)
-    redirect_to listings_path(@listing)
-    flash[:notice] = "Listing has been updated."
+    redirect_to submitter_review_path(@listing)
   end 
 
   def approve
@@ -60,10 +59,10 @@ class ListingsController < ApplicationController
   end 
 
   def submitter_review
-     if @listing.approved == true 
+    if @listing.approved == true 
       flash[:error] = "That page is not acessible."
       redirect_to listings_path
-   end 
+    end 
   end
 
   def admin_review
