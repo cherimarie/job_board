@@ -7,10 +7,13 @@
 <hr />
 <h4> Look good? </h4>
 
-  <%= link_to "Nope! Delete it.", listing_path(@listing), 
+  <%= link_to "Nope! Delete it.", listing_path(@listing), class: "btn",
   method: :delete, data: {confirm: "Really delete this job listing?"} %>
  
-  <%= link_to "Nope! Let's change it.", edit_listing_path(@listing)%>
+  <%= link_to "Nope! Let's change it.", edit_listing_path(@listing), class: "btn" %>
   <!-- should we be allowing folks to change a listing that's already been approved? -->
+
+  <%= link_to "Cancel", listings_path, class: "btn pull-right clearfix" %>
+
 
  </div> 
