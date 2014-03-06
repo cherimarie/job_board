@@ -46,7 +46,9 @@ class ListingsController < ApplicationController
       @listing.send_payment_prompt
       flash[:notice] = "Listing approved."
     else
-      flash[:notice] = params[:listing][:message_to_submitter]
+      flash[:notice] = "Listing rejected."
+      @message = params[:listing][:message_to_submitter]
+      @listing.send_rejection(@message)
     end 
     redirect_to admin_path
 

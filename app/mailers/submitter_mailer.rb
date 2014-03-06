@@ -15,5 +15,11 @@ class SubmitterMailer < ActionMailer::Base
     @listing = listing 
     mail to: listing.company_email, subject: "Thanks for listing on DevLocal Jobs"
   end 
+
+  def rejection(listing, message)
+    @listing = listing
+    @message = message 
+    mail to: listing.company_email, subject: "Your listing on DevLocal Jobs"
+  end
   
 end

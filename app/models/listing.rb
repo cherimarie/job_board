@@ -52,4 +52,9 @@ class Listing < ActiveRecord::Base
     SubmitterMailer.thanks(self).deliver
   end 
 
+  def send_rejection(message)
+    @message = message 
+    SubmitterMailer.rejection(self, @message).deliver
+  end 
+
 end
