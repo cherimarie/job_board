@@ -44,6 +44,9 @@ class ListingsController < ApplicationController
     @listing.update(date_approved: Time.now)
     if params[:listing][:approved] == "1"
       @listing.send_payment_prompt
+      flash[:notice] = "Listing approved."
+    else
+      flash[:notice] = params[:listing][:message_to_submitter]
     end 
     redirect_to admin_path
 

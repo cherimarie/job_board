@@ -8,6 +8,9 @@ class Listing < ActiveRecord::Base
 
   mount_uploader :logo, LogoUploader
 
+  #this adds a virtual field to model 
+  attr_accessor :message_to_submitter
+
   validates :title, presence: true
   validates :description, presence: true
   validates :headquarters, presence: true

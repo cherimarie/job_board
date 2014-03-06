@@ -10,12 +10,16 @@
 
     <h4>Look good?</h4>
 
-  <%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
+<%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
+
       <%= f.label :approved %>:
       Yes <%= f.radio_button("approved", "1") %>
-      No <%= f.radio_button("approved", "0") %>
+      No <%= f.radio_button("approved", "0") %> <br>
+      Message to submitter (optional) <br>
+      <%= f.text_area :message_to_submitter %>
    <%= f.submit "Save" %>
-     <% end %>
+
+<% end %>
 
 
     <%= link_to "Cancel", admin_path, class: "btn pull-right clearfix" %>
