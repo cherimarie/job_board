@@ -3,6 +3,43 @@
   padding-bottom: 12px;
 }
 
+.header-mini {
+  padding-bottom: 52px;
+
+  text-align: center;
+
+  .header-wrapper {
+    height: 36px;
+    padding: 0;
+  }
+
+  .logo-wrapper {
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+    padding-top: 16px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -48px;
+      right: -48px;
+      bottom: -15px;
+      left: -38px;
+      z-index: -1;
+
+      background: darken($blue, 10%);
+      transform: skewX(-15deg);
+    }
+  }
+
+  .logo {
+    width: 200px;
+    height: 32px;
+  }
+}
+
 .header-wrapper {
   padding: 24px 0;
 
