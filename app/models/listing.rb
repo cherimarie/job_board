@@ -45,5 +45,8 @@ class Listing < ActiveRecord::Base
     SubmitterMailer.update_listing(self).deliver
   end
 
-  
+  def send_thanks
+    SubmitterMailer.thanks(self).deliver
+  end 
+
 end

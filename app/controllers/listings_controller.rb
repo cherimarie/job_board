@@ -78,7 +78,7 @@ class ListingsController < ApplicationController
   end
 
   def submit_listing
-    #trigger 'thanks for submitting' email
+    @listing.send_thanks
     redirect_to listings_path
     flash[:notice] = "Thanks for sumbitting #{@listing.title}!"
   end 
