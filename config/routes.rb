@@ -25,6 +25,8 @@ JobBoard::Application.routes.draw do
   get 'search', to: 'listings#search'
   get 'admin', to: 'listings#admin', as: 'admin'
 
+  get 'listing/:id/submit_listing', to: 'listings#submit_listing', as: 'submit_listing'
+
 
   resources :categories
 

@@ -6,7 +6,7 @@
 
   <hr />
   <h4> Look good? </h4>
-  <%= link_to "Submit for approval", listings_path, class: "btn" %>
+  <%= link_to "Submit for approval", submit_listing_path(@listing.id), class: "btn" %>
  
   <%= link_to "Nope! Delete it.", listing_path(@listing), class: "btn",
   method: :delete, data: {confirm: "Really delete this job listing?"} %>

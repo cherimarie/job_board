@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
 
   before_filter :prepare_categories
   before_filter :load_listing, only: [:show, :edit, :update, :approve, 
-                                      :review, :destroy, :submitter_review, :admin_review]
+                                      :review, :destroy, :submitter_review, :admin_review, :submit_listing]
   before_filter :authorize, only: [:approve]                                     
 
   def index
@@ -76,6 +76,12 @@ class ListingsController < ApplicationController
       flash[:error] = "That page is not accessible."
     end 
   end
+
+  def submit_listing
+    #trigger 'thanks for submitting' email
+    redirect_to listings_path
+    flash[:notice] = "Thanks for sumbitting #{@listing.title}!"
+  end 
 
   private
 
