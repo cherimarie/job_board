@@ -46,6 +46,7 @@ class ListingsController < ApplicationController
       @listing.send_payment_prompt
     end 
     redirect_to admin_path
+
   end 
 
   def destroy
