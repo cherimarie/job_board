@@ -1,20 +1,22 @@
-<header class="header">
-  <div class="container">
-    <a href="<%= root_url %>">
-      <h1 class="logo">
-        <span class="visuallyhidden">DevLocal Jobs</span>
-      </h1>
-    </a>
+<header class="header" role="banner">
+  <div class="header-wrapper">
+    <div class="container clearfix">
+      <a href="<%= root_url %>" class="pull-left">
+        <h1 class="logo">
+          <span class="visuallyhidden">DevLocal Jobs</span>
+        </h1>
+      </a>
 
-    <%= form_tag "/search", method: "get" do %>
-      <%= label_tag "Search for:" %>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", name: nil %>
-    <% end %>
+      <div class="header-actions pull-right">
+        <%= form_tag "/search", class: 'searchbar', method: "get" do %>
+          <%= label_tag "search", "Search for", class: 'visuallyhidden' %>
+          <%= text_field_tag :search, params[:search], class: 'searchbar-input' %>
+          <%= submit_tag "Search", name: nil, class: 'searchbar-btn btn' %>
+        <% end %>
 
-    
-    <%= link_to "List your job", new_listing_path, class: 'btn pull-right' %>
-    
+        <%= link_to "List your job", new_listing_path, class: 'btn btn-header' %>
+      </div>
+    </div>
   </div>
 </header>
 

@@ -1,4 +1,9 @@
 .header {
+  overflow: hidden;
+  padding-bottom: 12px;
+}
+
+.header-wrapper {
   padding: 24px 0;
 
   background: $blue;
@@ -11,6 +16,74 @@
   height: 40px;
   margin: 0;
 
-  background-image: image-url("logo.svg");
+  background-image: inline-image("logo.svg");
   background-repeat: no-repeat;
+}
+
+.header-actions {
+  position: relative;
+  top: 9px;
+
+  .searchbar,
+  .btn {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -48px;
+    bottom: -38px;
+    left: -38px;
+
+    background: darken($blue, 10%);
+    transform: skewX(-15deg);
+  }
+}
+
+.btn-header {
+  border-color: $white;
+
+  &:hover,
+  &:focus {
+    border-color: $blue;
+  }
+}
+
+.searchbar {
+  float: left;
+  margin-right: 36px;
+
+  font-size: 0;
+}
+
+.searchbar-input,
+.searchbar-btn {
+  vertical-align: top;
+}
+
+.searchbar-input {
+  padding: 9px 10px 8px;
+  border: 0;
+  border-radius: 4px 0 0 4px;
+
+  background: rgba(255,255,255,0.6);
+  color: darken($blue, 20%);
+  font-size: 16px;
+  transition: 0.3s ease background-color;
+
+  &:focus {
+    background: $white;
+    outline: none;
+  }
+}
+
+.searchbar-btn {
+  border-color: lighten($blue, 15%);
+  border-radius: 0 4px 4px 0;
+
+  background-color: lighten($blue, 15%);
+  color: $white;
 }
