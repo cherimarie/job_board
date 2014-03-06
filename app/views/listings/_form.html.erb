@@ -1,67 +1,78 @@
 <%= form_for @listing do |l| %>
 
-  <ul> 
+  <ul>
   <% @listing.errors.full_messages.each do |error| %>
     <li><%= error %></li>
   <% end %>
-  </ul> 
+  </ul>
 
-  <h4>Job Information</h4>
-  <p>
-    <%= l.label :title %> <br />
-    <%= l.text_field :title, required: true %>
-  </p>
+  <fieldset class="form-fieldset post post-borderless">
+    <legend class="heading-secondary form-legend">Job Information:</legend>
 
-  <p>
-    <%= l.label :category %> <br />
-    <%= l.collection_select :category_id, @categories, :id, :name, {include_blank: "Please select"}, required: true %>
-  </p>
+    <div class="form-fieldset-content module">
+      <p>
+        <%= l.label :title, class: 'form-label' %>
+        <%= l.text_field :title, required: true, class: 'form-control' %>
+      </p>
 
-  <p>
-    <%= l.label :description %>  (this field accepts markdown or plain text)<br />
-    <%= l.text_area :description, required: true %>
-  </p>
+      <p>
+        <%= l.label :category, class: 'form-label' %>
+        <%= l.collection_select :category_id, @categories, :id, :name, {include_blank: "Please select"}, required: true, class: 'form-control' %>
+      </p>
 
-  <p>
-    <%= l.label :headquarters %> <br />
-    <%= l.text_field :headquarters, required: true %>
-  </p>
+      <p>
+        <%= l.label :description, class: 'form-label' %>
+        <span class="form-label-instructional">(this field accepts markdown or plain text)</span>
+        <%= l.text_area :description, required: true, class: 'form-control' %>
+      </p>
 
-  <p>
-    <%= l.label "Application Instructions" %> <br />
-    <%= l.text_area :app_instructions, required: true %>
-  </p>
+      <p>
+        <%= l.label :headquarters, class: 'form-label' %>
+        <%= l.text_field :headquarters, required: true, class: 'form-control' %>
+      </p>
 
-  <h4>Company Information</h4>
+      <p>
+        <%= l.label "Application Instructions", class: 'form-label' %>
+        <%= l.text_area :app_instructions, required: true, class: 'form-control' %>
+      </p>
+    </div>
+  </fieldset>
 
-  <p>
-    <%= l.label "Company Name" %> <br />
-    <%= l.text_field :company_name, required: true %>
-  </p>
+  <fieldset class="form-fieldset post post-borderless">
+    <legend class="heading-secondary form-legend">Company Information:</legend>
 
-  <p>
-    <%= l.label "URL" %> <br />
-    <%= l.text_field :company_url, required: true %>
-  </p>
+    <div class="form-fieldset-content module">
+      <p>
+        <%= l.label "Company Name", class: 'form-label' %>
+        <%= l.text_field :company_name, required: true, class: 'form-control' %>
+      </p>
 
-  <p>
-    <%= l.label "Email" %> <br />
-    <%= l.email_field :company_email, required: true %>
-  </p>
+      <p>
+        <%= l.label "URL", class: 'form-label' %>
+        <%= l.text_field :company_url, required: true, class: 'form-control' %>
+      </p>
 
-  <p>
-    <%= l.label "Logo (optional)" %> <br />
-    <%= l.file_field :logo %>
-    Supported file types: jpg, jpeg, png, gif, bmp
+      <p>
+        <%= l.label "Email", class: 'form-label' %>
+        <%= l.email_field :company_email, required: true, class: 'form-control' %>
+      </p>
 
-    <% if @listing.logo? %>
-      <%= image_tag @listing.logo_url %>
-      <%= l.check_box :remove_logo %> Remove Logo 
-    <% end %>
-  </p>
+      <p>
+        <%= l.label "Logo (optional)", class: 'form-label' %>
+        <span class="form-label-instructional">Supported file types: jpg, jpeg, png, gif, bmp</span>
+        <%= l.file_field :logo, class: 'form-control' %>
 
-  <p>
-    <%= l.submit %> 
+        <% if @listing.logo? %>
+          <%= image_tag @listing.logo_url %>
+          <%= l.check_box :remove_logo %> Remove Logo
+        <% end %>
+      </p>
+    </div>
+  </fieldset>
+
+  <p class="clearfix">
+    <%= link_to "Cancel", listings_path, class: "btn pull-left" %>
+    <%= l.submit class: 'btn btn-primary pull-right' %>
   </p>
 
   <% end %>

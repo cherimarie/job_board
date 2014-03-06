@@ -1,0 +1,60 @@
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 11px 7px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  background: $white;
+  box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+  font-size: 16px;
+}
+
+select.form-control {
+  height: 42px;
+}
+
+.textarea-transition:focus {
+  transition: 0.3s ease-out height;
+}
+
+.form-label {
+  color: $grey-medium;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+.form-label + .form-control,
+.form-label-instructional + .form-control {
+  margin-top: 3px;
+}
+
+.form-label-instructional {
+  color: #999;
+  font-size: 13px;
+}
+
+.form-fieldset {
+  padding: 0;
+}
+
+.form-legend {
+  float: left;
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 6px 6px 0 0;
+
+  background: #333;
+  color: #fff;
+}
+
+.form-fieldset-content {
+  clear: both;
+  padding: 24px 24px 36px;
+  border: 1px solid $grey-light;
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+}
