@@ -4,7 +4,7 @@
 
 .content {
   flex: 1;
-  padding: 60px 0;
+  padding: 48px 0;
 }
 
 /* ==========================================================================
@@ -37,15 +37,18 @@
   color: $blue;
   font-size: 13px;
   font-weight: 700;
+  line-height: 1.5;
   text-align: center;
   text-decoration: none;
   transition: 0.15s ease;
   transition-property: background-color, border-color;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-color: $blue;
 
     background: $blue;
     color: $white;
+    outline: none;
   }
 }
