@@ -1,4 +1,7 @@
 <ul class="listing-group">
+
+<% if @listings.count > 0 %>
+
   <% @listings.each do |l| %>
     <li class="listing">
       <a href="<%= listing_path(l.id) %>">
@@ -16,4 +19,10 @@
       </a>
     </li>
   <% end %>
-</ul>
+  </ul>
+
+
+<% else %>
+<p>Sorry, there are no results for that query.</p>
+<% end %>
+
