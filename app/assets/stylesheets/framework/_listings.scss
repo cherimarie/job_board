@@ -25,9 +25,11 @@
 
   > a {
     display: block;
+    display: flex;
     height: 100%;
 
     color: $grey-medium;
+    text-decoration: none;
   }
 }
 
@@ -46,6 +48,8 @@
 }
 
 .listing-bow {
+  flex-shrink: 0;
+
   background: $white;
   font-size: 14px;
   text-transform: uppercase;
@@ -86,7 +90,9 @@
 }
 
 .listing-stern {
+  flex-shrink: 0;
   float: right;
+  margin-left: auto;
 
   font-size: 14px;
 }
