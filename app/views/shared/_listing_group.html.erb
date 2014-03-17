@@ -1,28 +1,24 @@
-<ul class="listing-group">
-
 <% if @listings.count > 0 %>
+  <ul class="listing-group">
+    <% @listings.each do |l| %>
+      <li class="listing">
+        <a href="<%= listing_path(l.id) %>">
+          <strong class="listing-bow listing-section">
+            <span><%= l.company_name %></span>
+          </strong>
 
-  <% @listings.each do |l| %>
-    <li class="listing">
-      <a href="<%= listing_path(l.id) %>">
-        <strong class="listing-bow listing-section">
-          <span><%= l.company_name %></span>
-        </strong>
+          <h3 class="listing-title listing-section">
+            <%= l.title %>
+          </h3>
 
-        <h3 class="listing-title listing-section">
-          <%= l.title %>
-        </h3>
-
-        <div class="listing-stern listing-section">
-          Feb 25
-        </div>
-      </a>
-    </li>
-  <% end %>
+          <div class="listing-stern listing-section">
+            <%= l.date_approved.strftime("%m/%d") %>
+          </div>
+        </a>
+      </li>
+    <% end %>
   </ul>
 
-
 <% else %>
-<p>Sorry, there are no results for that query.</p>
+  <p>Sorry, there are no results for that query.</p>
 <% end %>
-

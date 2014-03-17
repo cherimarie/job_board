@@ -2,29 +2,32 @@
 
 <div class="container">
   <% @categories.each do |c| %>
-    <h2 class="heading-primary"><%= c.name %> Jobs</h2>
 
-    <ul class="listing-group">
-      <% c.listings.approved.recent10.each do |l| %>
-        <li class="listing">
-          <a href="<%= listing_path(l.id) %>">
-            <strong class="listing-bow listing-section">
-              <span><%= l.company_name %></span>
-            </strong>
+    <% if c.listings.approved.count > 0 %>
+      <h2 class="heading-primary"><%= c.name %> Jobs</h2>
 
-            <h3 class="listing-title listing-section">
-              <%= l.title %>
-            </h3>
+      <ul class="listing-group">
+        <% c.listings.approved.recent10.each do |l| %>
+          <li class="listing">
+            <a href="<%= listing_path(l.id) %>">
+              <strong class="listing-bow listing-section">
+                <span><%= l.company_name %></span>
+              </strong>
 
-            <div class="listing-stern listing-section">
-              <%= l.date_approved.strftime("%m/%d") %>
-            </div>
-          </a>
-        </li>
-      <% end %>
-    </ul>
+              <h3 class="listing-title listing-section">
+                <%= l.title %>
+              </h3>
 
-  <p class="clearfix"><%= link_to "See all #{c.name} jobs", 
-  category_path(c), :class => "btn pull-right" %></p>
+              <div class="listing-stern listing-section">
+                <%= l.date_approved.strftime("%m/%d") %>
+              </div>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+
+      <p class="clearfix"><%= link_to "See all #{c.name} jobs",
+      category_path(c), :class => "btn pull-right" %></p>
+    <% end %>
   <% end %>
 </div>
