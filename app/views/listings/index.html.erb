@@ -12,9 +12,11 @@
               <span><%= l.company_name %></span>
             </strong>
 
-            <h3 class="listing-title listing-section">
-              <%= l.title %>
-            </h3>
+            <div class="listing-section listing-title">
+              <h3 class="listing-title-content">
+                <%= l.title %>
+              </h3>
+            </div>
 
             <div class="listing-stern listing-section">
               <%= l.date_approved.strftime("%m/%d") %>
@@ -24,7 +26,7 @@
       <% end %>
     </ul>
 
-  <p class="clearfix"><%= link_to "See all #{c.name} jobs", 
+  <p class="clearfix"><%= link_to "See all #{c.name} jobs",
   category_path(c), :class => "btn pull-right" %></p>
   <% end %>
 </div>
