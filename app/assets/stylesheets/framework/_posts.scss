@@ -55,12 +55,14 @@
 
 .post-content-wrapper {
   overflow: hidden;
+  display: flex;
   border-radius: 0 0 6px 6px;
 
   background: $white;
 }
 
 .post-meta {
+  order: 2;
   float: right;
   width: calc(33.3333% + 24px);
 
@@ -87,6 +89,8 @@
 
 .post-content {
   overflow: hidden;
+  order: 1;
+  flex-grow: 1;
   padding-right: 48px;
   border-right: 1px solid $grey-light;
 
