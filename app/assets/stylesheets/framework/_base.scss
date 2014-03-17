@@ -53,7 +53,23 @@ h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr 
 }
 
 .module > {
-  h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hgroup,
+  ul,
+  ol,
+  dd,
+  p,
+  figure,
+  pre,
+  table,
+  fieldset,
+  hr,
+  .post {
     &:last-child {
       margin-bottom: 0;
     }

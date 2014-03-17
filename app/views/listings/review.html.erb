@@ -2,9 +2,8 @@
 
 <div class="container">
 
-  <%= render partial: "review_listing" %>
+  <%= render partial: "shared/listing_post" %>
 
-  <hr />
 <!-- if admin-->
   <% if current_user %>
     <h4>Look good?</h4>
@@ -21,10 +20,10 @@
 <!-- if listing has already been approved, it can only be reached by token link-->
 
     <%= link_to "Submit for approval", listings_path %>
-   
-    <%= link_to "Nope! Delete it.", listing_path(@listing), 
+
+    <%= link_to "Nope! Delete it.", listing_path(@listing),
     method: :delete, data: {confirm: "Really delete this job listing?"} %>
-   
+
     <%= link_to "Nope! Let's change it.", edit_listing_path(@listing)%>
 
   <% end %>

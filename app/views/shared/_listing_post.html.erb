@@ -1,0 +1,31 @@
+<article class="post">
+  <header class="post-section post-header module">
+    <h1 class="heading-primary"><%= @listing.title %></h1>
+  </header>
+
+  <p class="post-subhead"><%= @listing.category.name %></p>
+
+  <div class="post-content-wrapper">
+    <aside class="post-meta post-section module">
+      <% if @listing.logo_url %>
+        <%= image_tag @listing.logo_url %>
+      <% end %>
+
+      <ul class="post-meta-list">
+        <li><%= @listing.company_name %></li>
+        <li>Headquarters: <%= @listing.headquarters %></li>
+
+        <!-- TODO: make this link more dependable -->
+        <li><%= link_to  @listing.company_url , ("http://" + @listing.company_url)%></li>
+      </ul>
+    </aside>
+
+    <div class="post-content post-section module">
+      <h2 class="heading-secondary">Job Description: </h2>
+      <p><%= markdown.render(@listing.description).html_safe  %></p>
+
+      <h3 class="heading-tertiary">How to Apply: </h3>
+      <p><%= @listing.app_instructions %></p>
+    </div>
+  </div>
+</article>

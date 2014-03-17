@@ -2,31 +2,45 @@
 
 <div class="container">
 
+  <h1 class="heading-primary">Review submitted listing</h1>
+
   <% if current_user %>
 
-    <%= render partial: "review_listing" %>
+    <div class="well module">
+      <%= render partial: "shared/listing_post" %>
+    </div>
 
-    <hr />
+    <%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
+      <fieldset class="form-fieldset post post-borderless">
+        <legend class="heading-secondary form-legend">Look good?</legend>
 
-    <h4>Look good?</h4>
+        <div class="form-fieldset-content module">
+          <%= f.label :approved, class: "form-label" %>
 
-<%= form_for @listing, url: listing_approve_path(@listing) do |f| %>
+          <p class="form-input-row">
+            <label class="form-input-radio"><%= f.radio_button("approved", "1") %> Yes</label>
+            <label class="form-input-radio"><%= f.radio_button("approved", "0") %> No</label>
+          </p>
 
-      <%= f.label :approved %>:
-      Yes <%= f.radio_button("approved", "1") %>
-      No <%= f.radio_button("approved", "0") %> <br>
-      Reason for rejection (optional) <br>
-      <%= f.text_area :message_to_submitter %>
-   <%= f.submit "Save" %>
+          <p>
+            <%= f.label :message_to_submitter, "Reason for rejection", class: "form-label" %>
+            <span class="form-label-instructional">(optional)</span>
+            <%= f.text_area :message_to_submitter, class: "form-control" %>
+          </p>
 
-<% end %>
+        </div>
+      </fieldset>
+      <%= f.submit "Save", class:"btn btn-primary pull-right" %>
 
+    <% end %>
 
-    <%= link_to "Cancel", admin_path, class: "btn pull-right clearfix" %>
+    <%= link_to "Cancel", admin_path, class: "btn pull-left" %>
 
   <% else %>
 
-   <%= link_to "Log In", login_path, class: "btn pull-right clearfix" %>
+  <div class="text-center">
+    <%= link_to "Log In", login_path, class: "btn" %>
+  </div>
 
   <% end %>
 </div>

@@ -58,3 +58,13 @@ select.form-control {
   border-top: 0;
   border-radius: 0 0 6px 6px;
 }
+
+.form-input-radio {
+  margin-right: 16px;
+
+  font-size: 12px;
+
+  input {
+    margin-right: 3px;
+  }
+}
