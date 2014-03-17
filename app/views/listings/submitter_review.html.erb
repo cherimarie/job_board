@@ -1,10 +1,14 @@
 <%= render partial: "shared/header_small" %>
 
 <div class="container">
+  
+  <h1 class="heading-primary">Review your listing, <%= @listing.company_email %></h1>
 
-<%= render partial: "review_listing" %>
+    <div class="well module">
+      <%= render partial: "shared/listing_post" %>
+    </div>
 
-  <hr />
+
   <h4> Look good? </h4>
   <%= link_to "Submit for approval", submit_listing_path(@listing.id), class: "btn" %>
  

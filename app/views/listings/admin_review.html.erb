@@ -2,9 +2,9 @@
 
 <div class="container">
 
-  <h1 class="heading-primary">Review submitted listing</h1>
+<% if current_user %>
 
-  <% if current_user %>
+  <h1 class="heading-primary">Review submitted listing</h1>
 
     <div class="well module">
       <%= render partial: "shared/listing_post" %>
