@@ -4,29 +4,33 @@
 
   <h2 class="heading-primary"><%= @category.name %> Jobs</h2>
 
-  <ul class="listing-group">
-    <% @category.listings.approved.each do |l| %>
-      <li class="listing">
+  <% if @category.listings.approved.count > 0 %>
+    <ul class="listing-group">
+      <% @category.listings.approved.each do |l| %>
+        <li class="listing">
 
-        <a href="<%= listing_path(l.id) %>">
-          <strong class="listing-bow listing-section">
-            <span><%= l.company_name %></span>
-          </strong>
+          <a href="<%= listing_path(l.id) %>">
+            <strong class="listing-bow listing-section">
+              <span><%= l.company_name %></span>
+            </strong>
 
-          <div class="listing-section listing-title">
-            <h3 class="listing-title-content">
-              <%= l.title %>
-            </h3>
-          </div>
+            <div class="listing-section listing-title">
+              <h3 class="listing-title-content">
+                <%= l.title %>
+              </h3>
+            </div>
 
-          <div class="listing-stern listing-section">
-            <%= l.date_approved.strftime("%m/%d") %>
-          </div>
-        </a>
+            <div class="listing-stern listing-section">
+              <%= l.date_approved.strftime("%m/%d") %>
+            </div>
+          </a>
 
-      </li>
-    <% end %>
-  </ul>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Sorry, there are no listings in this category.</p>
+  <% end %>
 
   <%= link_to "Back to all jobs", listings_path, class: "btn pull-right clearfix" %>
 </div>
