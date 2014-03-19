@@ -1,0 +1,1195 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+
+ */
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/* line 16, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 24, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+html,
+button,
+input,
+select,
+textarea {
+  color: #333333;
+  font-family: "Ideal Sans SSm A", "Ideal Sans SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 30, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+html {
+  height: 100%;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 37, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* line 48, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-rendering: optimizeLegibility;
+}
+
+/* line 52, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr {
+  margin: 0 0 24px;
+}
+
+/* line 74, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+.module > h1:last-child,
+.module > h2:last-child,
+.module > h3:last-child,
+.module > h4:last-child,
+.module > h5:last-child,
+.module > h6:last-child,
+.module > hgroup:last-child,
+.module > ul:last-child,
+.module > ol:last-child,
+.module > dd:last-child,
+.module > p:last-child,
+.module > figure:last-child,
+.module > pre:last-child,
+.module > table:last-child,
+.module > fieldset:last-child,
+.module > hr:last-child,
+.module > .post:last-child {
+  margin-bottom: 0;
+}
+
+/* line 80, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+a {
+  color: #406b99;
+}
+/* line 83, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+a:hover {
+  color: #333333;
+}
+
+/* line 88, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 92, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+textarea {
+  font-family: "Ideal Sans SSm A", "Ideal Sans SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  resize: vertical !important;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+/* line 103, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 108, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+/* line 121, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_base.scss */
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+
+/* line 1, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_layout.scss */
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+/* line 6, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_components.scss */
+.content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 48px 0;
+}
+
+/* ==========================================================================
+   Headings
+   ========================================================================== */
+/* line 15, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_components.scss */
+.heading-primary {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* line 20, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_components.scss */
+.heading-secondary {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+/* line 25, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_components.scss */
+.heading-tertiary {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+/* line 34, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_components.scss */
+.btn {
+  display: inline-block;
+  padding: 8px 10px 7px;
+  border: 1px solid #d2dfec;
+  border-radius: 4px;
+  background: white;
+  color: #406b99;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: 0.15s ease;
+  transition: 0.15s ease;
+  -webkit-transition-property: background-color, border-color;
+  transition-property: background-color, border-color;
+}
+/* line 51, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_components.scss */
+.btn:hover, .btn:focus {
+  border-color: #406b99;
+  background: #406b99;
+  color: white;
+  outline: none;
+}
+
+/* line 60, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_components.scss */
+.btn-primary {
+  border-color: #406b99;
+  background: #406b99;
+  color: white;
+}
+/* line 67, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_components.scss */
+.btn-primary:hover, .btn-primary:focus {
+  border-color: #223951;
+  background: #223951;
+}
+
+/* ==========================================================================
+   Wells
+   ========================================================================== */
+/* line 78, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_components.scss */
+.well {
+  margin-bottom: 24px;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #eee;
+  -webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* line 1, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header {
+  overflow: hidden;
+  padding-bottom: 12px;
+}
+
+/* line 6, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header-mini {
+  padding-bottom: 52px;
+  text-align: center;
+}
+/* line 11, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header-mini .header-wrapper {
+  height: 36px;
+  padding: 0;
+}
+/* line 16, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header-mini .logo-wrapper {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding-top: 16px;
+}
+/* line 23, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header-mini .logo-wrapper:before {
+  content: "";
+  position: absolute;
+  top: -48px;
+  right: -48px;
+  bottom: -15px;
+  left: -38px;
+  z-index: -1;
+  background: #315275;
+  -webkit-transform: skewX(-15deg);
+  -ms-transform: skewX(-15deg);
+  transform: skewX(-15deg);
+}
+/* line 37, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header-mini .logo {
+  width: 200px;
+  height: 32px;
+}
+
+/* line 43, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header-wrapper {
+  padding: 24px 0;
+  background: #406b99;
+  color: white;
+}
+
+/* line 50, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.logo {
+  display: inline-block;
+  width: 250px;
+  height: 40px;
+  margin: 0;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjEwNC42IDE4OC4xIDc2Ny42IDEyMS4xIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDEwNC42IDE4OC4xIDc2Ny42IDEyMS4xIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZGlzcGxheT0ibm9uZSIgZmlsbD0iIzFENEQ4MiIgZD0iTTIwOS45LDQ0Ni40SC04LjdWMjI3LjhoMjE4LjZMMjA5LjksNDQ2LjRMMjA5LjksNDQ2LjR6IE0xMDQuNiwyNzYuN0g5MUw2MSwzOTYuNGgxMy42CglMMTA0LjYsMjc2Ljd6IE0xNDMuNiwyNzYuN0gxMzBsLTMwLDExOS43aDEzLjZMMTQzLjYsMjc2Ljd6Ii8+CjxnPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0zODMuMywyOTIuMXYtOTMuNmgxMC4xdjkzLjZIMzgzLjN6Ii8+CgkJCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00MzMuMiwyOTMuMmMtMTYuNCwwLTI3LjItMTIuNS0yNy4yLTI3LjlzMTAuOC0yNy45LDI3LjItMjcuOXMyNy4xLDEyLjUsMjcuMSwyNy45CgkJCQlTNDQ5LjYsMjkzLjIsNDMzLjIsMjkzLjJ6IE00MzMuMiwyNDUuNmMtMTAuMywwLTE3LjIsNy45LTE3LjIsMTkuN2MwLDExLjcsNi45LDE5LjcsMTcuMiwxOS43YzEwLjIsMCwxNy4xLTcuOSwxNy4xLTE5LjcKCQkJCUM0NTAuNCwyNTMuNiw0NDMuNCwyNDUuNiw0MzMuMiwyNDUuNnoiLz4KCQkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQ5OS41LDI5My4yYy0xNywwLTI4LjktMTIuMS0yOC45LTI3LjVzMTItMjguMSwyOC45LTI4LjFjNi42LDAsMTMuNCwyLjQsMTguMyw1LjVsLTQsNy43CgkJCQljLTQuNC0yLjYtOS42LTQuNS0xNS4xLTQuNWMtMTAuNCwwLTE4LjQsNy4xLTE4LjQsMTkuM2MwLDExLjYsOS4xLDE4LjksMTksMTguOWM1LjUsMCwxMC43LTEuOSwxNS4xLTQuNWwzLjQsNy43CgkJCQlDNTEyLjksMjkwLjcsNTA2LjIsMjkzLjIsNDk5LjUsMjkzLjJ6Ii8+CgkJCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik01NjAuMiwyOTIuMXYtNS42Yy00LjQsNC4zLTEwLDYuNi0xNi42LDYuNmMtMTAuNiwwLTE5LjMtNi4zLTE5LjMtMTcuMmMwLTkuNyw4LjMtMTYuNywxOS4yLTE2LjcKCQkJCWM3LjQsMCwxMS42LDEuNywxNi4yLDMuNnYtMy4yYzAtOS00LjMtMTMuMy0xNC0xMy4zYy01LjEsMC0xMC4zLDEuMi0xNCwyLjdsLTEuNy04LjdjNS0xLjUsMTEuNi0yLjgsMTctMi44CgkJCQljMTUuMywwLDIyLjUsNy4yLDIyLjUsMjIuOHYzMS45QzU2OS40LDI5Mi4xLDU2MC4yLDI5Mi4xLDU2MC4yLDI5Mi4xeiBNNTU5LjYsMjcxLjJjLTUuMy0zLTguNy00LjQtMTQuNi00LjQKCQkJCWMtNi45LDAtMTEuNCwzLjEtMTEuNCw5YzAsNS44LDQuNSw5LjEsMTIuMyw5LjFjNS42LDAsMTAuMi0yLjgsMTMuNS02LjZ2LTcuMkg1NTkuNnoiLz4KCQkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTU4My4yLDI5Mi4xdi05My42aDEwLjF2OTMuNkg1ODMuMnoiLz4KCQk8L2c+CgkJPGc+CgkJCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0xMTMuNywzMDkuMmgtOUwxMzUsMTg4LjFoOC45TDExMy43LDMwOS4yeiIvPgoJCTwvZz4KCQk8Zz4KCQkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTMzOC4zLDMwOS4yaC05bDMwLjUtMTIxLjFoOC45TDMzOC4zLDMwOS4yeiIvPgoJCTwvZz4KCQk8Zz4KCQkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTE5MS4zLDI5Mi4xdi01LjVjLTQuMyw0LjQtMTAuMyw2LjUtMTcuMSw2LjVjLTE1LjQsMC0yNi4yLTExLjMtMjYuMi0yNy4zYzAtMTUuNywxMi4yLTI4LjMsMjYuNC0yOC4zCgkJCQljNywwLDEyLjIsMiwxNi40LDUuM3YtNDQuMmgxMC4xdjkzLjZIMTkxLjN6IE0xOTAuOCwyNTMuMmMtMy4zLTQtOC43LTcuMi0xNS41LTcuMmMtMTAuMSwwLTE3LjIsOC4yLTE3LjIsMTkuNwoJCQkJYzAsMTAuNyw2LjYsMTkuMSwxNy45LDE5LjFjNi41LDAsMTEuNC0yLjgsMTQuOS03VjI1My4yeiIvPgoJCQk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjYyLjMsMjY4LjRoLTM5LjNjMS4yLDkuMSw2LjMsMTYuMSwyMCwxNi4xYzQuNSwwLDkuOC0xLjMsMTQuOC0zbDEuOCw4LjVjLTYuMiwxLjgtMTIuNSwzLjEtMTcuNCwzLjEKCQkJCWMtMTkuMiwwLTI4LjktMTIuMS0yOC45LTI3LjVjMC0xNC43LDkuNS0yOC4xLDI2LTI4LjFjMTUuMiwwLDIzLjUsMTEuMywyMy41LDI1LjdDMjYyLjYsMjY1LjEsMjYyLjYsMjY2LjUsMjYyLjMsMjY4LjR6CgkJCQkgTTI1My4zLDI2MC43Yy0wLjYtOC4zLTUuMy0xNC44LTE0LjgtMTQuOGMtOC43LDAtMTQsNS42LTE1LjIsMTQuOEgyNTMuM3oiLz4KCQkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTI5NS4xLDI5My41aC0xLjdsLTI2LjItNTVoMTEuM2wxNi4yLDM3LjVsMTYuMi0zNy41aDEwLjhMMjk1LjEsMjkzLjV6Ii8+CgkJPC9nPgoJPC9nPgoJPGc+CgkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTY5OC4yLDI2NC43YzAsMTguOC05LjgsMjktMjQuOCwyOWMtOS4zLDAtMTYuMS0zLjMtMjEuMi03LjRsMi40LTMuMmM0LjUsMy45LDEwLjYsNi44LDE4LjgsNi44CgkJCWMxMiwwLDIwLjctOC42LDIwLjctMjUuMnYtNjQuOWg0LjJWMjY0Ljd6Ii8+CgkJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTczOS4zLDI5My4xYy0xNC43LDAtMjUuMy0xMS44LTI1LjMtMjcuMXMxMC44LTI3LjIsMjUuNi0yNy4yYzE0LjcsMCwyNS41LDExLjcsMjUuNSwyNwoJCQlTNzU0LDI5My4xLDczOS4zLDI5My4xeiBNNzM5LjQsMjQyLjVjLTEyLjcsMC0yMS4zLDEwLjMtMjEuMywyMy40YzAsMTMuMiw4LjQsMjMuNiwyMS4zLDIzLjZjMTIuNywwLDIxLjQtMTAuNSwyMS40LTIzLjYKCQkJQzc2MC44LDI1Mi43LDc1Mi4zLDI0Mi41LDczOS40LDI0Mi41eiIvPgoJCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik04MDIuNCwyOTMuMWMtOC4yLDAtMTQuOS0zLjgtMTktOC4ydjcuMmgtNHYtOTIuNGg0djQ3LjRjNC4zLTQuNCwxMS04LjMsMTkuMy04LjMKCQkJYzE0LjUsMCwyNS41LDExLjYsMjUuNSwyNy4xUzgxNywyOTMuMSw4MDIuNCwyOTMuMXogTTgwMi41LDI0Mi41Yy03LjksMC0xNC45LDQuMi0xOS4yLDkuNnYyOC4xYzQuMyw1LjMsMTEuMiw5LjMsMTkuMiw5LjMKCQkJYzEyLjIsMCwyMS40LTkuNywyMS40LTIzLjZDODI0LDI1Mi4yLDgxNC44LDI0Mi41LDgwMi41LDI0Mi41eiIvPgoJCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik04NTYsMjkzLjFjLTYuNywwLTEyLjYtMi41LTE3LjktNi4ybDEuOS0zYzQuOCwzLjMsMTAsNS44LDE2LDUuOGM3LjYsMCwxMi41LTQuNSwxMi41LTEwLjUKCQkJYzAtMTQuOS0yNy41LTkuNi0yNy41LTI3LjFjMC02LjgsNS44LTEzLjQsMTUuOC0xMy40YzUuNSwwLDEwLjUsMS44LDE1LjEsNWwtMS45LDMuMmMtNC41LTMuMy04LjQtNC44LTEzLjItNC44CgkJCWMtNy45LDAtMTIsNC43LTEyLDkuNmMwLDE1LDI3LjUsOS4zLDI3LjUsMjYuOEM4NzIuMiwyODYuMyw4NjUuOSwyOTMuMSw4NTYsMjkzLjF6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNjIwLDMwOS4yaC05bDMwLjUtMTIxLjFoOC45TDYyMCwzMDkuMnoiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K');
+  background-repeat: no-repeat;
+}
+
+/* line 60, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header-actions {
+  position: relative;
+  top: 9px;
+}
+/* line 65, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header-actions .searchbar,
+.header-actions .btn {
+  position: relative;
+  z-index: 1;
+}
+/* line 70, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.header-actions:before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -48px;
+  bottom: -38px;
+  left: -38px;
+  background: #315275;
+  -webkit-transform: skewX(-15deg);
+  -ms-transform: skewX(-15deg);
+  transform: skewX(-15deg);
+}
+
+/* line 83, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.btn-header {
+  border-color: white;
+}
+/* line 87, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.btn-header:hover, .btn-header:focus {
+  border-color: #406b99;
+}
+
+/* line 92, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.searchbar {
+  float: left;
+  margin-right: 36px;
+  font-size: 0;
+}
+
+/* line 100, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.searchbar-input,
+.searchbar-btn {
+  vertical-align: top;
+}
+
+/* line 104, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.searchbar-input {
+  padding: 9px 10px 8px;
+  border: 0;
+  border-radius: 4px 0 0 4px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #223951;
+  font-size: 16px;
+  -webkit-transition: 0.3s ease background-color;
+  transition: 0.3s ease background-color;
+}
+/* line 114, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.searchbar-input:focus {
+  background: white;
+  outline: none;
+}
+
+/* line 120, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_header.scss */
+.searchbar-btn {
+  border-color: #6691bf;
+  border-radius: 0 4px 4px 0;
+  background-color: #6691bf;
+  color: white;
+}
+
+/* line 1, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing-group {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 7, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing {
+  overflow: hidden;
+  height: 68px;
+  margin-bottom: 16px;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  background: #fafafa;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  font-size: 0;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transition-property: background-color, border-color;
+  transition-property: background-color, border-color;
+}
+/* line 20, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing:hover {
+  border-color: #d1d1d1;
+  background-color: #ededed;
+}
+/* line 26, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing > a {
+  display: block;
+  height: 100%;
+  color: #666666;
+}
+
+/* line 34, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing-section {
+  position: relative;
+  float: left;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 16px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* line 48, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing-bow {
+  background: white;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+/* line 53, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing-bow span {
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+/* line 60, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing-bow:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  width: 20px;
+  background: white;
+  -webkit-box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1);
+  -webkit-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  transform: rotate(15deg);
+}
+
+/* line 76, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing-title {
+  margin: 0 0 0 16px;
+  color: #406b99;
+  font-size: 18px;
+  text-decoration: none;
+}
+/* line 83, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing:hover .listing-title {
+  text-decoration: underline;
+}
+
+/* line 88, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_listings.scss */
+.listing-stern {
+  float: right;
+  font-size: 14px;
+}
+
+/* line 1, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post {
+  margin-bottom: 24px;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  background: #fafafa;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* line 10, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-borderless {
+  border: 0;
+}
+
+/* line 14, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-section {
+  padding: 24px;
+}
+
+/* line 18, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-header {
+  border-radius: 6px 6px 0 0;
+}
+
+/* line 22, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-subhead {
+  position: relative;
+  margin: 0 -6px;
+  padding: 8px 30px 7px;
+  background: #333;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+}
+/* line 36, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-subhead:before, .post-subhead:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0px;
+  border: 3px solid transparent;
+  border-right-color: #000;
+  border-top-color: #000;
+}
+/* line 47, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-subhead:after {
+  right: 0;
+  left: auto;
+  border-right-color: transparent;
+  border-left-color: #000;
+}
+
+/* line 56, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-content-wrapper {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 0 0 6px 6px;
+  background: white;
+}
+
+/* line 64, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-meta {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  float: right;
+  width: -webkit-calc(33.3333% + 24px);
+  width: calc(33.3333% + 24px);
+}
+/* line 69, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-meta img {
+  margin-bottom: 36px;
+}
+
+/* line 74, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-meta-list {
+  padding: 0;
+  font-size: 13px;
+  font-weight: 700;
+  list-style: none;
+}
+/* line 81, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-meta-list li {
+  margin-bottom: 12px;
+}
+/* line 84, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-meta-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* line 90, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_posts.scss */
+.post-content {
+  overflow: hidden;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-right: 48px;
+  border-right: 1px solid #dedede;
+  background: #fafafa;
+}
+
+/* line 1, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 11px 7px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+/* line 13, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+select.form-control {
+  height: 42px;
+}
+
+/* line 17, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.textarea-transition:focus {
+  -webkit-transition: 0.3s ease-out height;
+  transition: 0.3s ease-out height;
+}
+
+/* line 21, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.form-label {
+  color: #666666;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 31, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.form-label + .form-control,
+.form-label-instructional + .form-control {
+  margin-top: 3px;
+}
+
+/* line 35, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.form-label-instructional {
+  color: #999;
+  font-size: 13px;
+}
+
+/* line 40, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.form-fieldset {
+  padding: 0;
+}
+
+/* line 44, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.form-legend {
+  float: left;
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 6px 6px 0 0;
+  background: #333;
+  color: #fff;
+}
+
+/* line 54, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.form-fieldset-content {
+  clear: both;
+  padding: 24px 24px 36px;
+  border: 1px solid #dedede;
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+}
+
+/* line 62, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.form-input-radio {
+  margin-right: 16px;
+  font-size: 12px;
+}
+/* line 67, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_forms.scss */
+.form-input-radio input {
+  margin-right: 3px;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+/* line 10, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_utilities.scss */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 19, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_utilities.scss */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/* line 36, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_utilities.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+/* line 49, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_utilities.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 66, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_utilities.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+/* line 71, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_utilities.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 79, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_utilities.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 83, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_utilities.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 91, /Users/Gargantua/Worky/jobboard/app/assets/stylesheets/framework/_utilities.scss */
+.text-center {
+  text-align: center;
+}
