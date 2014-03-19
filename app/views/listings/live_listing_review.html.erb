@@ -2,13 +2,16 @@
 
 <div class="container">
 
-<%= render partial: "review_listing" %>
+<h1 class="heading-primary">Review your listing, <%= @listing.company_email %></h1>
 
-<hr />
+    <div class="well module">
+      <%= render partial: "shared/listing_post" %>
+    </div>
+
 <h4> Look good? </h4>
 
   <%= link_to "Nope! Delete it.", listing_path(@listing), class: "btn",
-  method: :delete, data: {confirm: "Really delete this job listing?"} %>
+  method: :delete, data: {confirm: "Really delete this job listing? You will not be refunded."} %>
  
   <%= link_to "Nope! Let's change it.", edit_listing_path(@listing), class: "btn" %>
   <!-- should we be allowing folks to change a listing that's already been approved? -->
