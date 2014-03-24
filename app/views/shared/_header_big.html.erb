@@ -7,7 +7,7 @@
         </h1>
       </a>
 
-      <div class="header-actions pull-right">
+      <div class="header-actions">
         <%= form_tag "/search", class: 'searchbar', method: "get" do %>
           <%= label_tag "search", "Search for", class: 'visuallyhidden' %>
           <%= text_field_tag :search, params[:search], class: 'searchbar-input' %>

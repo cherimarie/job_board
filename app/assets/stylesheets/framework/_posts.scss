@@ -12,7 +12,11 @@
 }
 
 .post-section {
-  padding: 24px;
+  padding: 12px;
+
+  @media only screen and (min-width: 700px) {
+    padding: 24px;
+  }
 }
 
 .post-header {
@@ -22,7 +26,7 @@
 .post-subhead {
   position: relative;
   margin: 0 -6px;
-  padding: 8px 30px 7px;
+  padding: 8px 18px 7px;
 
   background: #333;
   box-shadow: 0 1px 1px rgba(0,0,0,0.2);
@@ -32,6 +36,11 @@
   letter-spacing: 1px;
   text-rendering: optimizeLegibility;
   text-transform: uppercase;
+
+  @media only screen and (min-width: 700px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 
   &:before, &:after {
     content: "";
@@ -55,16 +64,24 @@
 
 .post-content-wrapper {
   overflow: hidden;
-  display: flex;
   border-radius: 0 0 6px 6px;
 
   background: $white;
+
+  @media only screen and (min-width: 850px) {
+    display: flex;
+  }
 }
 
 .post-meta {
-  order: 2;
-  float: right;
-  width: calc(33.3333% + 24px);
+  border-bottom: 1px solid $grey-light;
+
+  @media only screen and (min-width: 850px) {
+    order: 2;
+    float: right;
+    width: calc(33.3333% + 24px);
+    border-bottom: 0;
+  }
 
   img {
     margin-bottom: 36px;
@@ -89,10 +106,13 @@
 
 .post-content {
   overflow: hidden;
-  order: 1;
-  flex-grow: 1;
-  padding-right: 48px;
-  border-right: 1px solid $grey-light;
 
   background: $grey-ultralight;
+
+  @media only screen and (min-width: 850px) {
+    order: 1;
+    flex-grow: 1;
+    padding-right: 48px;
+    border-right: 1px solid $grey-light;
+  }
 }

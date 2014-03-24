@@ -6,7 +6,6 @@
 
 .listing {
   overflow: hidden;
-  height: 68px;
   margin-bottom: 16px;
   border: 1px solid $grey-light;
   border-radius: 6px;
@@ -17,6 +16,14 @@
   transition: 0.3s ease;
   transition-property: background-color, border-color;
 
+  @media only screen and (min-width: 500px) {
+    height: 56px;
+  }
+
+  @media only screen and (min-width: 850px) {
+    height: 68px;
+  }
+
   &:hover {
     border-color: darken($grey-light, 5%);
 
@@ -25,9 +32,16 @@
 
   > a {
     display: block;
+    display: flex;
+    flex-wrap: wrap;
     height: 100%;
 
     color: $grey-medium;
+    text-decoration: none;
+
+    @media only screen and (min-width: 500px) {
+      flex-wrap: nowrap;
+    }
   }
 }
 
@@ -39,46 +53,99 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 0 16px;
+  padding: 8px;
 
   font-size: 16px;
   line-height: 1;
+
+  @media only screen and (min-width: 500px) {
+    padding: 0 10px;
+  }
+
+  @media only screen and (min-width: 850px) {
+    padding: 0 16px;
+  }
 }
 
 .listing-bow {
+  flex-grow: 1;
+  flex-shrink: 0;
+  order: 2;
+  border-top: 1px solid $grey-light;
+
   background: $white;
-  font-size: 14px;
-  text-transform: uppercase;
+  font-size: 12px;
+
+  @media only screen and (min-width: 500px) {
+    flex-grow: 0;
+    order: inherit;
+    border-top: 0;
+
+    text-transform: uppercase;
+  }
+
+  @media only screen and (min-width: 850px) {
+    font-size: 14px;
+  }
 
   span {
     position: relative;
     z-index: 1;
 
+    flex: 1;
+
     line-height: 1;
   }
 
-  &:after {
-    content: "";
+  @media only screen and (min-width: 500px) {
+    &:after {
+      content: "";
 
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    bottom: -10px;
+      position: absolute;
+      top: -10px;
+      right: -5px;
+      bottom: -10px;
 
-    width: 20px;
+      width: 20px;
 
-    background: $white;
-    box-shadow: 1px 0 0 rgba(0,0,0,0.1);
-    transform: rotate(15deg);
+      background: $white;
+      box-shadow: 1px 0 0 rgba(0,0,0,0.1);
+      transform: rotate(15deg);
+
+      @media only screen and (min-width: 850px) {
+        right: -10px;
+      }
+    }
   }
 }
 
 .listing-title {
-  margin: 0 0 0 16px;
+  flex-basis: 100%;
+  order: 1;
+  margin: 8px 0;
+
+  @media only screen and (min-width: 500px) {
+    flex-basis: auto;
+    order: inherit;
+    margin: 0 0 0 12px;
+  }
+
+  @media only screen and (min-width: 850px) {
+    margin-left: 16px;
+  }
+}
+
+.listing-title-content {
+  flex: 1;
+  margin: 0;
 
   color: $blue;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
+
+  @media only screen and (min-width: 850px) {
+    font-size: 18px;
+  }
 
   .listing:hover & {
     text-decoration: underline;
@@ -86,7 +153,23 @@
 }
 
 .listing-stern {
+  flex-shrink: 0;
+  order: 2;
   float: right;
+  margin-left: auto;
+  border-top: 1px solid $grey-light;
 
-  font-size: 14px;
+  background: $white;
+  font-size: 12px;
+
+  @media only screen and (min-width: 500px) {
+    order: inherit;
+    border-top: 0;
+
+    background: transparent;
+  }
+
+  @media only screen and (min-width: 850px) {
+    font-size: 14px;
+  }
 }
