@@ -1,6 +1,10 @@
 .header {
   overflow: hidden;
-  padding-bottom: 12px;
+  padding-bottom: 3px;
+
+  @media only screen and (min-width: 700px) {
+    padding-bottom: 12px;
+  }
 }
 
 .header-mini {
@@ -41,14 +45,18 @@
 }
 
 .header-wrapper {
-  padding: 24px 0;
+  padding: 12px 0;
 
   background: $blue;
   color: $white;
+
+  @media only screen and (min-width: 850px) {
+    padding: 24px 0;
+  }
 }
 
 .logo {
-  display: inline-block;
+  display: block;
   width: 250px;
   height: 40px;
   margin: 0;
@@ -61,6 +69,16 @@
   position: relative;
   top: 9px;
 
+  clear: both;
+  padding-top: 18px;
+
+  @media only screen and (min-width: 700px) {
+    clear: none;
+    float: right;
+
+    padding: 0;
+  }
+
   .searchbar,
   .btn {
     position: relative;
@@ -70,30 +88,68 @@
   &:before {
     content: "";
     position: absolute;
-    top: -60px;
+    top: 5px;
     right: -48px;
-    bottom: -38px;
-    left: -38px;
+    bottom: -6px;
+    left: -20px;
 
     background: darken($blue, 10%);
-    transform: skewX(-15deg);
+
+    @media only screen and (min-width: 700px) {
+      top: -60px;
+      bottom: -15px;
+
+      transform: skewX(-15deg);
+    }
+
+    @media only screen and (min-width: 850px) {
+      bottom: -38px;
+      left: -38px;
+    }
   }
 }
 
 .btn-header {
+  overflow: hidden;
+  width: 36px;
+  height: 36px;
+  padding: 0;
   border-color: $white;
+
+  @media only screen and (min-width: 850px) {
+    overflow: visible;
+    width: auto;
+    height: auto;
+    padding: 8px 10px 7px;
+  }
 
   &:hover,
   &:focus {
     border-color: $blue;
   }
+
+  &:before {
+    content: "+";
+    display: block;
+
+    font-size: 32px;
+    line-height: 1;
+
+    @media only screen and (min-width: 850px) {
+      display: none;
+    }
+  }
 }
 
 .searchbar {
   float: left;
-  margin-right: 36px;
+  margin-right: 24px;
 
   font-size: 0;
+
+  @media only screen and (min-width: 850px) {
+    margin-right: 36px;
+  }
 }
 
 .searchbar-input,
