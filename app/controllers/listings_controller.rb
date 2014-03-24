@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
   end 
 
   def search
-    @listings = Listing.search(params[:search])
+    @listings = Listing.approved.search(params[:search])
   end
 
   def show
